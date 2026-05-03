@@ -214,7 +214,7 @@ export default class extends Vue {
     this.actionType = 'edit'
   }
 
-  private handleClose(st: string) {
+  private handleClose() {
     this.classData.dialogVisible = false
     this.$refs.classData.resetFields()
   }

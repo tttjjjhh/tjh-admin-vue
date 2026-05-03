@@ -54,13 +54,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import { UserModule } from '@/store/modules/user'
 import SidebarItem from './SidebarItem.vue'
 import variables from '@/styles/_variables.scss'
-import { getSidebarStatus, setSidebarStatus } from '@/utils/cookies'
-import Cookies from 'js-cookie'
 @Component({
   name: 'SideBar',
   components: {
@@ -69,11 +67,6 @@ import Cookies from 'js-cookie'
 })
 export default class extends Vue {
   private restKey: number = 0
-  get name() {
-    return (UserModule.userInfo as any).name
-      ? (UserModule.userInfo as any).name
-      : JSON.parse(Cookies.get('user_info') as any).name
-  }
   get defOpen() {
     // const urlArr = this.$route.path.split('/')
     // const openStr = urlArr.length > 2 ? `/${urlArr[1]}` : '/'
@@ -120,13 +113,6 @@ export default class extends Vue {
 
   get isCollapse() {
     return !this.sidebar.opened
-  }
-  private async logout() {
-    this.$store.dispatch('LogOut').then(() => {
-      // location.href = '/'
-      this.$router.replace({ path: '/login' })
-    })
-    // this.$router.push(`/login?redirect=${this.$route.fullPath}`)
   }
 }
 </script>

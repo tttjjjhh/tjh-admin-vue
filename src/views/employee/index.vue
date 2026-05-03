@@ -79,7 +79,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { getEmployeeList, enableOrDisableEmployee } from '@/api/employee'
-import { UserModule } from '@/store/modules/user'
 import Empty from '@/components/Empty/index.vue'
 
 @Component({
@@ -105,10 +104,6 @@ export default class extends Vue {
   initFun() {
     this.page = 1
     this.init()
-  }
-
-  get userName() {
-    return UserModule.username
   }
 
   private async init(isSearch?: boolean) {
