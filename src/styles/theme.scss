@@ -1,11 +1,11 @@
 :root {
-  --ink-bg: #f7f3ea;
+  --ink-bg: #f7f1e6;
   --ink-paper: #fffdf8;
-  --ink-sidebar: #17263b;
-  --ink-sidebar-dark: #0f1d2f;
+  --ink-sidebar: #14263d;
+  --ink-sidebar-dark: #102033;
   --ink-text: #1f2933;
   --ink-sub-text: #6b7280;
-  --ink-border: #e4d8c7;
+  --ink-border: #e8dcc8;
   --ink-gold: #c99a2e;
   --ink-gold-light: #f2c14e;
   --ink-green: #2f5d50;
@@ -86,15 +86,15 @@ body {
 }
 
 .el-button--primary {
-  color: #fff;
-  background: linear-gradient(90deg, #1f3b48 0%, var(--ink-green) 100%);
-  border-color: #1f3b48;
+  color: #3b2d13;
+  background: linear-gradient(90deg, #d8a93a 0%, #c99a2e 100%);
+  border-color: #c99a2e;
 }
 
 .el-button--primary:hover,
 .el-button--primary:focus {
-  background: linear-gradient(90deg, #234655 0%, #356c5d 100%);
-  border-color: #234655;
+  background: linear-gradient(90deg, #e0b44a 0%, #d2a33a 100%);
+  border-color: #d2a33a;
 }
 
 .el-button--warning,
@@ -127,8 +127,8 @@ body {
 .el-input__inner:focus,
 .el-textarea__inner:focus,
 .el-select .el-input.is-focus .el-input__inner {
-  border-color: var(--ink-green);
-  box-shadow: 0 0 0 2px rgba(47, 93, 80, 0.12);
+  border-color: #d8a93a;
+  box-shadow: 0 0 0 2px rgba(201, 154, 46, 0.16);
 }
 
 .el-table {
@@ -175,7 +175,7 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(90deg, #1b3044 0%, #2b4f67 100%) !important;
+  background: linear-gradient(90deg, #17324d 0%, #0f2238 100%) !important;
 }
 
 .navbar .businessBtn {
@@ -225,17 +225,11 @@ body {
 .el-table td { background: #fffefb; }
 .el-table--enable-row-hover .el-table__body tr:hover > td { background: #fdf7ed !important; }
 
-.el-button--primary {
-  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%);
-  border-color: #c99a2e;
-  color: #3b2d13;
-}
-
 .continue,
 .ink-query-btn,
 .ink-save-btn {
-  background: linear-gradient(90deg, #1f3b48 0%, #2f5d50 100%) !important;
-  border-color: #1f3b48 !important;
+  background: linear-gradient(90deg, #17324d 0%, #0f2238 100%) !important;
+  border-color: #17324d !important;
   color: #fff !important;
 }
 
@@ -268,12 +262,8 @@ body {
 .addBut,
 .blueBug,
 .delBut {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
   visibility: visible !important;
   opacity: 1 !important;
-  position: static;
 }
 
 /* login page */
