@@ -22,6 +22,33 @@ html {
   height: 100%;
 }
 
+body {
+  background: linear-gradient(180deg, #f7f8ff 0%, #eef2ff 100%);
+  color: #1f2937;
+}
+
+.app-container {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+  margin: 16px;
+}
+
+.el-button--primary {
+  background: linear-gradient(135deg, #7c5cff 0%, #4f7cff 100%) !important;
+  border: none !important;
+}
+
+.el-card,
+.el-dialog,
+.el-table {
+  border-radius: 14px !important;
+}
+
+.el-table th {
+  background: #f8f9ff !important;
+}
+
 *,
 *:before,
 *:after {
