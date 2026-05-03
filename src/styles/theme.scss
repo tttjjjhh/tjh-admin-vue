@@ -99,6 +99,32 @@ body {
   background: rgba(255, 255, 255, 0.78);
 }
 
+// Guard rails: keep operation buttons visible after theme/layout overrides
+.ink-filter-actions .el-button,
+.tableLab .el-button,
+.tableLab span,
+.el-table .el-button--text {
+  display: inline-flex !important;
+  align-items: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.blueBug,
+.ink-action-btn {
+  color: #2f365a !important;
+}
+
+.delBut,
+.ink-muted-danger {
+  color: #8b5e3c !important;
+}
+
+.continue {
+  background: #2f365a !important;
+  border-color: #2f365a !important;
+}
+
 .el-input__inner,
 .el-textarea__inner,
 .el-select .el-input__inner {
