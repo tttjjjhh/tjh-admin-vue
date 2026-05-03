@@ -6,7 +6,7 @@
         <div class="ink-wash-mask" />
         <div class="visual-content">
           <h1>忆流年</h1>
-          <p class="cn-subtitle">以古意入味，以系统提效</p>
+          <p class="cn-subtitle">慢煮人间味，轻拾旧时光</p>
           <p class="en-subtitle">Timeless Gastronomy Admin</p>
           <span class="seal">外卖</span>
         </div>
@@ -225,7 +225,10 @@ export default class extends Vue {
   }
 
   .cn-subtitle {
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.7;
     margin: 0 0 12px;
   }
 
