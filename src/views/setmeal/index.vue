@@ -250,12 +250,28 @@ export default class extends Vue {
 
 <style lang="scss" scoped>
 .setmeal-page {
+  .tableBar {
+    ::v-deep .ink-filter-actions {
+      margin-left: auto;
+      padding-left: 12px;
+    }
+  }
+
   ::v-deep .ink-filter-bar {
     padding: 6px 0;
   }
 
   ::v-deep .ink-filter-actions {
     gap: 12px;
+  }
+
+  @media (max-width: 1366px) {
+    .tableBar {
+      ::v-deep .ink-filter-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
+    }
   }
 
   .filter-item {
