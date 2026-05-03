@@ -33,7 +33,7 @@
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
-          style="width: 420px"
+          style="width: 500px"
           @clear="init(orderStatus)"
         /></div>
         <template #actions><el-button class="normal-btn continue" @click="init(orderStatus, true)">查询</el-button></template>
