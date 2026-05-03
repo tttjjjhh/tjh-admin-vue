@@ -123,8 +123,10 @@ export default class extends Vue {
   justify-content: center;
   align-items: center;
   height: 100%;
-  // background: #476dbe;
-  background: radial-gradient(circle at 20% 15%, #8acbff 0%, #2e86e6 42%, #0d2f63 100%);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(201, 154, 46, 0.22) 0%, rgba(201, 154, 46, 0) 28%),
+    radial-gradient(circle at 82% 14%, rgba(255, 248, 232, 0.22) 0%, rgba(255, 248, 232, 0) 26%),
+    linear-gradient(120deg, #17324d 0%, #0f2238 42%, #f7f1e6 42%, #fbf8f1 100%);
 }
 
 .login-box {
@@ -132,10 +134,14 @@ export default class extends Vue {
   height: 474.38px;
   border-radius: 14px;
   display: flex;
-  box-shadow: 0 18px 46px rgba(9, 42, 92, 0.35);
+  box-shadow: 0 18px 46px rgba(15, 34, 56, 0.32);
+  overflow: hidden;
   img {
     width: 60%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px 0 0 14px;
+    box-shadow: inset -10px 0 30px rgba(15, 34, 56, 0.12);
   }
 }
 
@@ -146,13 +152,14 @@ export default class extends Vue {
 }
 
 .login-form {
-  background: #ffffff;
+  background: linear-gradient(180deg, #fffdf8 0%, #fcf7ee 100%);
   width: 40%;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0 14px 14px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 14px;
+  box-shadow: inset 0 0 0 1px #e8dcc8;
   .el-form {
     width: 214px;
     height: 307px;
@@ -161,9 +168,8 @@ export default class extends Vue {
     margin-bottom: 30px;
   }
   .el-form-item.is-error .el-input__inner {
-    border: 0 !important;
-    border-bottom: 1px solid #fd7065 !important;
-    background: #fff !important;
+    border: 1px solid #d7746b !important;
+    background: #fffdf8 !important;
   }
   .input-icon {
     height: 32px;
@@ -171,14 +177,18 @@ export default class extends Vue {
     margin-left: -2px;
   }
   .el-input__inner {
-    border: 0;
-    border-bottom: 1px solid #e9e9e8;
-    border-radius: 0;
-    font-size: 12px;
+    border: 1px solid #d7cbb9;
+    border-radius: 8px;
+    background: #fffaf2;
+    font-size: 13px;
     font-weight: 400;
     color: #000000;
     height: 32px;
     line-height: 32px;
+  }
+  .el-input__inner:focus {
+    border-color: #c99a2e;
+    box-shadow: 0 0 0 2px rgba(201, 154, 46, 0.15);
   }
   .el-input__prefix {
     left: 0;
@@ -198,21 +208,19 @@ export default class extends Vue {
 }
 
 .login-btn {
-  border-radius: 17px;
+  border-radius: 22px;
   padding: 11px 20px !important;
   margin-top: 10px;
   font-weight: 500;
   font-size: 12px;
-  border: 0;
-  font-weight: 500;
-  color: #ffffff;
-  // background: #09a57a;
-  background-color: #1890FF;
+  border: 1px solid #c99a2e;
+  color: #3b2d13;
+  background: linear-gradient(90deg, #d8a93a 0%, #c99a2e 100%);
   &:hover,
   &:focus {
-    // background: #09a57a;
-    background-color: #1890FF;
-    color: #ffffff;
+    background: linear-gradient(90deg, #e1b44a 0%, #d3a33c 100%);
+    border-color: #d3a33c;
+    color: #3b2d13;
   }
 }
 .login-form-title {
