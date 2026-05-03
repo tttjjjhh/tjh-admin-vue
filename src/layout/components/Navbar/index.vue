@@ -307,9 +307,9 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
-  background: rgba(255, 251, 243, 0.95);
+  background: #EFE4D0;
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(165,130,80,0.18);
+  border-bottom: 1px solid #D8C7A8;
   box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
@@ -345,7 +345,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #4A3A28;
+    color: #1F2A24;
     font-size: 14px;
 
     span {
@@ -356,7 +356,7 @@ export default class extends Vue {
       &:hover {
         background: rgba(185, 139, 66, 0.08);
         border-radius: 9px;
-        color: #A8792A;
+        color: #6F4E37;
       }
     }
     .amendPwdIcon {
@@ -467,12 +467,12 @@ export default class extends Vue {
   .businessBtn {
     height: 22px;
     line-height: 20px;
-    background: linear-gradient(135deg, #C45A3C 0%, #A84432 100%);
+    background: #B85C38;
     border: 1px solid rgba(120, 50, 35, 0.25);
     border-radius: 999px;
     display: inline-block;
     padding: 0 6px;
-    color: #fff;
+    color: #FFF8EE;
     box-shadow: 0 4px 10px rgba(180, 75, 53, 0.18);
     font-weight: 600;
   }
