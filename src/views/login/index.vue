@@ -293,10 +293,14 @@ export default class extends Vue {
     box-shadow: 0 0 0 2px rgba(201, 154, 46, 0.15);
   }
   .el-input__prefix {
-    left: 0;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    color: #9b7a3d;
+    opacity: 0.92;
   }
   .el-input--prefix .el-input__inner {
-    padding-left: 26px;
+    padding-left: 40px;
   }
   .el-input__inner::placeholder {
     color: #b8a98a;
@@ -306,7 +310,14 @@ export default class extends Vue {
   }
   .el-input--medium .el-input__icon {
     line-height: 46px;
-    color: #6f604b;
+    font-size: 17px;
+    color: #9b7a3d;
+    opacity: 0.92;
+  }
+  .el-input.is-focus .el-input__icon,
+  .el-input__inner:focus + .el-input__prefix .el-input__icon {
+    color: #8a6428;
+    opacity: 1;
   }
 }
 
