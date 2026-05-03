@@ -5,25 +5,25 @@
     </InkCard>
     <InkTableWrapper :class="{ hContainer: tableData.length }">
       <InkFilterBar class="tableBar">
-        <div><label style="margin-right: 10px">订单号：</label>
+        <div class="filter-item"><label>订单号：</label>
         <el-input
           v-model="input"
           placeholder="请填写订单号"
-          style="width: 15%"
+          style="width: 220px"
           clearable
           @clear="init(orderStatus)"
           @keyup.enter.native="initFun(orderStatus)"
         /></div>
-        <div><label style="margin-left: 20px">手机号：</label>
+        <div class="filter-item"><label>手机号：</label>
         <el-input
           v-model="phone"
           placeholder="请填写手机号"
-          style="width: 15%"
+          style="width: 220px"
           clearable
           @clear="init(orderStatus)"
           @keyup.enter.native="initFun(orderStatus)"
         /></div>
-        <div><label style="margin-left: 20px">下单时间：</label>
+        <div class="filter-item"><label>下单时间：</label>
         <el-date-picker
           v-model="valueTime"
           clearable
@@ -33,7 +33,7 @@
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
-          style="width: 25%; margin-left: 10px"
+          style="width: 320px"
           @clear="init(orderStatus)"
         /></div>
         <template #actions><el-button class="normal-btn continue" @click="init(orderStatus, true)">查询</el-button></template>
@@ -848,6 +848,8 @@ export default class extends Vue {
 .dashboard-container {
   .order-tabs-card { margin-bottom: 12px; }
   .tableBar { margin-bottom: 10px; }
+  .filter-item { display:flex; align-items:center; gap:10px; }
+  .filter-item > label { min-width: 62px; color:#4f5965; }
   .tableBox { border-radius: 10px; overflow: hidden; }
   .tableBox ::v-deep th { background: #f7f2e9; color: #293340; }
   .tableBox ::v-deep td { height: 54px; }
