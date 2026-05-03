@@ -250,10 +250,30 @@ export default class extends Vue {
 
 <style lang="scss" scoped>
 .setmeal-page {
+  ::v-deep .ink-filter-bar {
+    padding: 6px 0;
+  }
+
+  ::v-deep .ink-filter-actions {
+    gap: 12px;
+  }
+
   .filter-item {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    margin-right: 18px;
+    margin-bottom: 8px;
+  }
+
+  ::v-deep .el-table th > .cell,
+  ::v-deep .el-table td > .cell {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  ::v-deep .el-table .el-button--text {
+    padding: 0 2px;
   }
 
   .ink-primary-btn {
@@ -268,17 +288,28 @@ export default class extends Vue {
   }
 
   .cover-thumb {
-    width: 80px;
-    height: 48px;
+    width: 84px;
+    height: 52px;
     border-radius: 8px;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6f8;
+  }
+
+  ::v-deep .cover-thumb .el-image__inner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cover-fallback {
-    width: 80px;
-    height: 48px;
+    width: 84px;
+    height: 52px;
     object-fit: cover;
     border-radius: 8px;
+    display: block;
   }
 
   .status-cell {
