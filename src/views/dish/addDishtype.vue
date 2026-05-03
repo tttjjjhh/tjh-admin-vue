@@ -39,7 +39,7 @@
             <div class="flavorBox">
               <span v-if="dishFlavors.length == 0"
                     class="addBut"
-                    @click="addFlavore">
+                    @click="addFlavor">
                 + 添加口味</span>
               <div v-if="dishFlavors.length != 0"
                    class="flavor">
@@ -67,7 +67,7 @@
                            :style="inputStyle" />
                     </div>
                     <span class="delFlavor delBut non"
-                          @click="delFlavor(item.name, index)">删除</span>
+                          @click="deleteFlavor(item.name, index)">删除</span>
                   </div>
                 </div>
                 <div v-if="
@@ -75,7 +75,7 @@
                          this.dishFlavors.length < this.dishFlavorsData.length
                      "
                      class="addBut"
-                     @click="addFlavore">
+                     @click="addFlavor">
                   添加口味
                 </div>
               </div>
@@ -287,6 +287,9 @@ export default class extends Vue {
   private addFlavore() {
     this.dishFlavors.push({ name: '', value: [] }) // JSON.parse(JSON.stringify(this.dishFlavorsData))
   }
+  private addFlavor() {
+    this.addFlavore()
+  }
 
   // 按钮 - 删除口味
   private delFlavor(name: string, index?: number) {
@@ -294,6 +297,9 @@ export default class extends Vue {
       ? index
       : this.dishFlavors.findIndex(item => item.name === name)
     this.dishFlavors.splice(ind, 1)
+  }
+  private deleteFlavor(name: string, index?: number) {
+    this.delFlavor(name, index)
   }
 
   // 按钮 - 删除口味标签

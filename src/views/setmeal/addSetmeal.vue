@@ -40,13 +40,13 @@
               <div class="addDish">
                 <span v-if="dishTable.length == 0"
                       class="addBut"
-                      @click="openAddDish('new')">
+                      @click="openDishDialog('new')">
                   + 添加菜品</span>
                 <div v-if="dishTable.length != 0"
                      class="content">
                   <div class="addBut"
                        style="margin-bottom: 20px"
-                       @click="openAddDish('change')">
+                       @click="openDishDialog('change')">
                     + 添加菜品
                   </div>
                   <div class="table">
@@ -83,7 +83,7 @@
                           <el-button type="text"
                                      size="small"
                                      class="delBut non"
-                                     @click="delDishHandle(scope.$index)">
+                                     @click="deleteDish(scope.$index)">
                             删除
                           </el-button>
                         </template>
@@ -142,10 +142,10 @@
         </div>
       </el-form>
     </InkCard>
-    <el-dialog v-if="dialogVisible"
+    <el-dialog v-if="dishDialogVisible"
                title="添加菜品"
                class="addDishList"
-               :visible.sync="dialogVisible"
+               :visible.sync="dishDialogVisible"
                width="60%"
                :before-close="handleClose">
       <el-input v-model="value"
@@ -159,7 +159,7 @@
            style="cursor: pointer"
            @click="seachHandle" />
       </el-input>
-      <AddDish v-if="dialogVisible"
+      <AddDish v-if="dishDialogVisible"
                ref="adddish"
                :check-list="checkList"
                :seach-key="seachKey"
@@ -169,7 +169,7 @@
             class="dialog-footer">
         <el-button @click="handleClose">取 消</el-button>
         <el-button type="primary"
-                   @click="addTableList">添 加</el-button>
+                   @click="addDish">添 加</el-button>
       </span>
     </el-dialog>
   </InkPage>
@@ -206,6 +206,21 @@ export default class extends Vue {
   private dishTable: [] = []
   private dialogVisible: boolean = false
   private checkList: any[] = []
+  get dishDialogVisible() {
+    return this.dialogVisible
+  }
+  set dishDialogVisible(value: boolean) {
+    this.dialogVisible = value
+  }
+  get selectedDishes() {
+    return this.checkList
+  }
+  set selectedDishes(value: any[]) {
+    this.checkList = value
+  }
+  get setmealDishes() {
+    return this.dishTable
+  }
   private ruleForm = {
     name: '',
     categoryId: '',
@@ -336,6 +351,9 @@ export default class extends Vue {
     this.seachKey = ''
     this.dialogVisible = true
   }
+  openDishDialog(st: string) {
+    this.openAddDish(st)
+  }
   // 取消添加菜品
   handleClose(done: any) {
     // this.$refs.adddish.close()
@@ -351,6 +369,12 @@ export default class extends Vue {
       if (!n.copies) n.copies = 1
     })
     this.dialogVisible = false
+  }
+  public addDish() {
+    this.addTableList()
+  }
+  public deleteDish(index: number) {
+    this.delDishHandle(index)
   }
 
   public submitForm(formName: any, st: any) {
