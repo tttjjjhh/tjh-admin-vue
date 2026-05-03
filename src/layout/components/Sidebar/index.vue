@@ -12,15 +12,11 @@
         style="width: 120px; height: 31px"
       /> -->
       <div v-if="!isCollapse" class="sidebar-logo">
-        <div class="brand-mark">忆</div>
-        <div class="brand-text">
-          <h3>忆流年外卖</h3>
-          <p>TIMeless Gastronomy</p>
-        </div>
+        <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
       </div>
       <div v-else
            class="sidebar-logo-mini">
-        <span>忆</span>
+        <img src="@/assets/login/yiliunian-mini.svg" alt="忆流年" />
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -137,15 +133,12 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .logo {
   background: linear-gradient(135deg, #0f4da8, #1890ff 55%, #69c0ff);
-  padding: 12px;
+  padding: 8px 10px;
   height: 60px;
 }
-.sidebar-logo{display:flex;align-items:center;gap:10px;color:#fff}
-.brand-mark{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-weight:700}
-.brand-text h3{margin:0;font-size:16px;line-height:1}
-.brand-text p{margin:2px 0 0;font-size:10px;letter-spacing:1.4px;opacity:.85;text-transform:uppercase}
+.sidebar-logo img{width:168px;height:40px;object-fit:contain;display:block}
 .sidebar-logo-mini {
-  color:#fff;font-size:20px;font-weight:700;
+  img { width: 30px; height: 30px; display: block; margin: 0 auto; }
 }
 .el-scrollbar {
   height: 100%;

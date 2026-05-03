@@ -5,11 +5,7 @@
       <div class="login-form">
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">
-            <div class="title-seal">忆</div>
-            <div class="title-main">
-              <h2>忆流年外卖</h2>
-              <p>TIMeless Gastronomy</p>
-            </div>
+            <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
           </div>
           <el-form-item prop="username">
             <el-input
@@ -214,21 +210,11 @@ export default class extends Vue {
   }
 }
 .login-form-title {
-  height: 52px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  .title-seal{width:38px;height:38px;border:2px solid #1890ff;color:#1890ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin-right:10px;}
-  .title-main h2{margin:0;color:#0f4da8;font-size:24px;line-height:1;font-family:"STKaiti","KaiTi",serif;}
-  .title-main p{margin:3px 0 0;color:#6c7da0;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
-  align-items: center;
-  margin-bottom: 40px;
-  .title-label {
-    font-weight: 500;
-    font-size: 20px;
-    color: #333333;
-    margin-left: 10px;
-  }
+  margin-bottom: 18px;
+  img { width: 250px; max-width: 100%; height: auto; }
 }
 </style>
