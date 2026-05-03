@@ -268,7 +268,11 @@ body {
 
 /* login page */
 .login {
-  background: linear-gradient(120deg, #203547 0%, #2b4f67 38%, #f4eee3 38%, #f7f3ea 100%) !important;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(196, 158, 89, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(44, 59, 52, 0.08), transparent 30%),
+    radial-gradient(circle at 12% 86%, rgba(85, 82, 70, 0.10), transparent 34%),
+    linear-gradient(135deg, #fbf7ef 0%, #f4ead8 45%, #efe1c9 100%) !important;
 }
 .login .login-box,
 .login .login-form {
