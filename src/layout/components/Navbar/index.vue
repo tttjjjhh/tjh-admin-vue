@@ -595,11 +595,12 @@ export default class extends Vue {
 
 .userInfo {
   background: #fff;
+  color: #1f2d3d;
   position: absolute;
   top: 0px;
   left: 0;
   z-index: 99;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 24px rgba(13, 47, 99, 0.18);
   width: 100%;
   border-radius: 4px;
   line-height: 32px;
@@ -621,6 +622,7 @@ export default class extends Vue {
     height: 32px;
     line-height: 32px;
     padding: 0 5px 0 7px;
+    color: #3a4a62;
     i {
       margin-left: 10px;
 
@@ -629,7 +631,8 @@ export default class extends Vue {
       float: right;
     }
     &:hover {
-      background: #f6f1e1;
+      background: #eaf4ff;
+      color: #1565c0;
     }
   }
 }
