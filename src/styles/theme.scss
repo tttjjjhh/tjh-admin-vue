@@ -184,3 +184,107 @@ body {
   border-radius: 999px !important;
   box-shadow: 0 4px 10px rgba(87, 32, 28, 0.25);
 }
+
+/* ===== New Chinese ink visual refresh (style-only, no logic changes) ===== */
+.dashboard-container,
+.addBrand-container,
+.dashboard-container.home,
+.dashboard-container.dish-ink-page,
+.addBrand-container.ink-dish-add-page,
+.addBrand-container.ink-setmeal-add-page {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(118, 102, 71, 0.05), rgba(118, 102, 71, 0) 28%),
+    linear-gradient(180deg, #fbf8f1 0%, #f4eee4 100%);
+}
+
+.dashboard-container .container,
+.addBrand-container .container {
+  background: #fffdf8 !important;
+  border: 1px solid #e4d8c7;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(23, 38, 59, 0.06);
+}
+
+.dashboard-container .tableBar {
+  background: linear-gradient(180deg, #fffdf8 0%, #faf4e9 100%);
+  border: 1px solid #e8dece;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.dashboard-container .homeTitle,
+.addBrand-container .homeTitle {
+  font-weight: 700;
+  color: #1f2933;
+}
+
+.el-table th {
+  background: #f8f2e7 !important;
+  color: #1f2933 !important;
+}
+.el-table td { background: #fffefb; }
+.el-table--enable-row-hover .el-table__body tr:hover > td { background: #fdf7ed !important; }
+
+.el-button--primary {
+  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%);
+  border-color: #c99a2e;
+  color: #3b2d13;
+}
+
+.continue,
+.ink-query-btn,
+.ink-save-btn {
+  background: linear-gradient(90deg, #1f3b48 0%, #2f5d50 100%) !important;
+  border-color: #1f3b48 !important;
+  color: #fff !important;
+}
+
+.ink-create-btn,
+.ink-save-continue-btn,
+.ink-add-flavor-btn,
+.ink-add-dish-btn {
+  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
+  border-color: #c99a2e !important;
+  color: #3d2d11 !important;
+}
+
+.dashboard-container .tableLab > span,
+.ink-op-delete,
+.delBut {
+  color: #c46a61 !important;
+}
+
+.ink-cancel-btn,
+.el-button--default {
+  background: #fffdf8;
+  border: 1px solid #d8ccb8;
+  color: #586578;
+}
+
+/* Ensure critical action buttons always visible in normal flow */
+.tableBar .el-button,
+.tableBar .tableLab span,
+.subBox .el-button,
+.addBut,
+.blueBug,
+.delBut {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static;
+}
+
+/* login page */
+.login {
+  background: linear-gradient(120deg, #203547 0%, #2b4f67 38%, #f4eee3 38%, #f7f3ea 100%) !important;
+}
+.login .login-box,
+.login .login-form {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(21, 36, 54, 0.15);
+}
+.login .login-form {
+  background: #fffdf8 !important;
+}
