@@ -33,7 +33,7 @@
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
-          style="width: 320px"
+          style="width: 420px"
           @clear="init(orderStatus)"
         /></div>
         <template #actions><el-button class="normal-btn continue" @click="init(orderStatus, true)">查询</el-button></template>
@@ -849,7 +849,7 @@ export default class extends Vue {
   .order-tabs-card { margin-bottom: 12px; }
   .tableBar { margin-bottom: 10px; }
   .filter-item { display:flex; align-items:center; gap:10px; }
-  .filter-item > label { min-width: 62px; color:#4f5965; }
+  .filter-item > label { min-width: 62px; color:#4f5965; white-space: nowrap; }
   .tableBox { border-radius: 10px; overflow: hidden; }
   .tableBox ::v-deep th { background: #f7f2e9; color: #293340; }
   .tableBox ::v-deep td { height: 54px; }
