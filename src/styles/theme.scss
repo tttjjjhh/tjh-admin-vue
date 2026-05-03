@@ -171,11 +171,13 @@ body {
 .sidebar-container .el-menu,
 .sidebar-container .el-submenu > .el-submenu__title,
 .sidebar-container .el-submenu .el-menu-item {
-  background: linear-gradient(180deg, var(--ink-sidebar) 0%, var(--ink-sidebar-dark) 100%) !important;
+  background: linear-gradient(180deg, #f7ebd6 0%, #efe0c3 100%) !important;
 }
 
 .navbar {
-  background: linear-gradient(90deg, #17324d 0%, #0f2238 100%) !important;
+  background: #fbf7ef !important;
+  border-bottom: 1px solid rgba(139, 111, 72, 0.18);
+  box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 }
 
 .navbar .businessBtn {

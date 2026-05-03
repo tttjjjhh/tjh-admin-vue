@@ -5,17 +5,18 @@
     width: 100% !important;
 
     .el-menu-item {
-      color: #4f3f2d;
-      height: 42px;
+      color: #2B2A26;
+      height: 44px;
       line-height: 38px;
       padding: 0 0 0 17px !important;
-      margin: 0 0 20px 0;
+      margin: 0 0 8px 0;
+      border-radius: 14px;
 
       // border-radius: 0 21px 21px 0 !important;
       &:hover {
         color: #3c2f22 !important;
-        background: rgba(214, 181, 109, 0.2) !important;
-        border-radius: 16px;
+        background: #EADFCB !important;
+        border-radius: 14px;
 
         span {
           color: #3c2f22 !important;
@@ -33,14 +34,31 @@
     }
 
     .router-link-active .el-menu-item {
-      background: linear-gradient(90deg, #f3e6c6 0%, #ead7a8 100%) !important;
-      color: #3d2f1f !important;
-      border-radius: 16px !important;
-      box-shadow: inset 3px 0 0 #c9a24d, inset 0 0 0 1px rgba(187, 156, 109, 0.35);
+      background: linear-gradient(90deg, #EFE1BF 0%, #F8EFD9 100%) !important;
+      color: #2B2A26 !important;
+      border-radius: 14px !important;
+      border: 1px solid rgba(167,122,50,0.35);
+      box-shadow: 0 4px 12px rgba(120,90,45,0.10);
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        width: 3px;
+        height: 18px;
+        transform: translateY(-50%);
+        background: #A77A32;
+        border-radius: 999px;
+      }
 
       span {
-        color: #3d2f1f !important;
+        color: #2B2A26 !important;
         font-weight: 500 !important;
+      }
+      i,
+      .svg-fill {
+        color: #8A5A18 !important;
       }
     }
 
@@ -69,7 +87,7 @@
 
   .el-menu-item {
     i {
-      color: #5a4632;
+      color: #6B4F2A;
       font-size: 20px;
       margin-right: 9px;
     }
@@ -173,7 +191,7 @@
 
   .sidebar-container .router-link-active .el-menu-item,
   .el-menu-item.is-active {
-    background: linear-gradient(90deg, #f3e6c6 0%, #ead7a8 100%) !important;
+    background: linear-gradient(90deg, #EFE1BF 0%, #F8EFD9 100%) !important;
   }
 
   .sidebar-container .router-link-active .el-menu-item:hover,

@@ -307,8 +307,9 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
-  background: linear-gradient(180deg, #f8f3e8 0%, #efe4d1 58%, #e8d8bd 100%);
-  border-bottom: 1px solid rgba(120, 90, 50, 0.18);
+  background: #FBF7EF;
+  border-bottom: 1px solid rgba(139, 111, 72, 0.18);
+  box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .statusBox {
@@ -330,8 +331,8 @@ export default class extends Vue {
     }
     ::v-deep svg,
     ::v-deep i {
-      color: #5a4632 !important;
-      fill: #5a4632 !important;
+      color: #6B4F2A !important;
+      fill: #6B4F2A !important;
     }
   }
 
@@ -343,7 +344,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #5a4632;
+    color: #5A4632;
     font-size: 14px;
 
     span {
@@ -463,15 +464,15 @@ export default class extends Vue {
   .businessBtn {
     height: 22px;
     line-height: 20px;
-    background: linear-gradient(90deg, #b9473d 0%, #c75a4f 100%);
-    border: 1px solid rgba(146, 72, 60, 0.45);
+    background: linear-gradient(90deg, #a84a3a 0%, #b75b45 100%);
+    border: 1px solid rgba(120, 50, 35, 0.25);
     border-radius: 999px;
     display: inline-block;
     padding: 0 6px;
     color: #fff;
   }
   .closing {
-    background: linear-gradient(90deg, #b18d45 0%, #c89d4f 100%);
+    background: linear-gradient(90deg, #8f7860 0%, #a08a72 100%);
   }
   .navicon {
     i {
