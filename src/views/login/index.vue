@@ -138,11 +138,43 @@ export default class extends Vue {
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 14% 15%, rgba(216, 199, 163, 0.3) 0%, rgba(216, 199, 163, 0) 34%),
-    radial-gradient(circle at 82% 18%, rgba(163, 145, 112, 0.18) 0%, rgba(163, 145, 112, 0) 32%),
-    radial-gradient(circle at 52% 88%, rgba(31, 47, 44, 0.08) 0%, rgba(31, 47, 44, 0) 40%),
-    linear-gradient(180deg, #f8f5ed 0%, #f7f1e6 50%, #efe5d0 100%);
+    radial-gradient(circle at 20% 20%, rgba(214, 181, 109, 0.18), transparent 32%),
+    radial-gradient(circle at 80% 75%, rgba(31, 47, 44, 0.10), transparent 35%),
+    linear-gradient(135deg, #fbf7ef 0%, #f5efe2 46%, #efe3cf 100%);
+}
+
+.login::before,
+.login::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.login::before {
+  right: -80px;
+  top: -60px;
+  width: 420px;
+  height: 300px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 45%, rgba(31, 47, 44, 0.10) 0%, rgba(31, 47, 44, 0.02) 42%, rgba(31, 47, 44, 0) 72%),
+    radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0) 66%);
+  filter: blur(2px);
+}
+
+.login::after {
+  left: -120px;
+  bottom: -120px;
+  width: 520px;
+  height: 360px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 56% 52%, rgba(121, 110, 89, 0.16) 0%, rgba(121, 110, 89, 0.06) 38%, rgba(121, 110, 89, 0) 68%),
+    radial-gradient(circle at 62% 58%, rgba(214, 181, 109, 0.14) 0%, rgba(214, 181, 109, 0) 62%);
+  filter: blur(1px);
 }
 
 .login-box {
