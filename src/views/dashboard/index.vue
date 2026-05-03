@@ -1,73 +1,118 @@
 <template>
-  <div class="dashboard-container home">
-    <!-- 营业数据 -->
-    <Overview :overviewData="overviewData" />
-    <!-- end -->
-    <!-- 订单管理 -->
-    <Orderview :orderviewData="orderviewData" />
-    <!-- end -->
-    <div class="homeMain">
-      <!-- 菜品总览 -->
-      <CuisineStatistics :dishesData="dishesData" />
-      <!-- end -->
-      <!-- 套餐总览 -->
-      <SetMealStatistics :setMealData="setMealData" />
-      <!-- end -->
+  <InkPage class="dashboard-home">
+    <InkCard>
+      <InkSectionTitle title="今日数据" :date="days[1]">
+        <template #actions>
+          <router-link to="/statistics" class="detail-link">详细数据</router-link>
+        </template>
+      </InkSectionTitle>
+      <div class="stats-grid">
+        <InkStatCard title="营业额" :value="`¥ ${overviewData.turnover || 0}`">
+          <template #icon><i class="iconfont icon-jine_m-2"></i></template>
+        </InkStatCard>
+        <InkStatCard title="有效订单" :value="overviewData.validOrderCount || 0" />
+        <InkStatCard title="订单完成率" :value="`${completionRate}%`" />
+        <InkStatCard title="平均客单价" :value="`¥ ${overviewData.unitPrice || 0}`" />
+        <InkStatCard title="新增用户" :value="overviewData.newUsers || 0" />
+      </div>
+    </InkCard>
+
+    <InkCard>
+      <InkSectionTitle title="订单管理" :date="days[1]">
+        <template #actions>
+          <router-link to="/order" class="detail-link">订单明细</router-link>
+        </template>
+      </InkSectionTitle>
+      <div class="order-grid">
+        <router-link class="order-item" to="/order?status=2"><span><i class="iconfont icon-waiting"></i>待接单</span><b>{{ orderviewData.waitingOrders || 0 }}</b></router-link>
+        <router-link class="order-item" to="/order?status=3"><span><i class="iconfont icon-staySway"></i>待派送</span><b>{{ orderviewData.deliveredOrders || 0 }}</b></router-link>
+        <router-link class="order-item" to="/order?status=5"><span><i class="iconfont icon-complete"></i>已完成</span><b>{{ orderviewData.completedOrders || 0 }}</b></router-link>
+        <router-link class="order-item" to="/order?status=6"><span><i class="iconfont icon-cancel"></i>已取消</span><b>{{ orderviewData.cancelledOrders || 0 }}</b></router-link>
+        <router-link class="order-item" to="/order"><span><i class="iconfont icon-all"></i>全部订单</span><b>{{ orderviewData.allOrders || 0 }}</b></router-link>
+      </div>
+    </InkCard>
+
+    <div class="double-grid">
+      <InkCard>
+        <InkSectionTitle title="菜品总览">
+          <template #actions><router-link to="/dish" class="detail-link">菜品管理</router-link></template>
+        </InkSectionTitle>
+        <div class="summary-wrap">
+          <div class="summary-item"><span>已启售</span><b>{{ dishesData.sold || 0 }}</b></div>
+          <div class="summary-item"><span>已停售</span><b>{{ dishesData.discontinued || 0 }}</b></div>
+          <router-link class="add-btn" to="/dish/add">新增菜品</router-link>
+        </div>
+      </InkCard>
+
+      <InkCard>
+        <InkSectionTitle title="套餐总览">
+          <template #actions><router-link to="/setmeal" class="detail-link">套餐管理</router-link></template>
+        </InkSectionTitle>
+        <div class="summary-wrap">
+          <div class="summary-item"><span>已启售</span><b>{{ setMealData.sold || 0 }}</b></div>
+          <div class="summary-item"><span>已停售</span><b>{{ setMealData.discontinued || 0 }}</b></div>
+          <router-link class="add-btn" to="/setmeal/add">新增套餐</router-link>
+        </div>
+      </InkCard>
     </div>
-    <!-- 订单信息 -->
+
+    <InkCard class="order-empty-card">
+      <InkSectionTitle title="订单信息" />
+      <InkEmptyState title="暂无订单信息" description="山水悠悠，静候佳音" />
+    </InkCard>
+
     <OrderList
       :order-statics="orderStatics"
       @getOrderListBy3Status="getOrderListBy3Status"
     />
-    <!-- end -->
-  </div>
+  </InkPage>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
   getBusinessData,
-  getDataOverView, //营业数据
-  getOrderData, //订单管理今日订单
-  getOverviewDishes, //菜品总览
-  getSetMealStatistics, //套餐总览
+  getOrderData,
+  getOverviewDishes,
+  getSetMealStatistics,
 } from '@/api/index'
 import { getOrderListBy } from '@/api/order'
-// 组件
-// 营业数据
-import Overview from './components/overview.vue'
-// 订单管理
-import Orderview from './components/orderview.vue'
-// 菜品总览
-import CuisineStatistics from './components/cuisineStatistics.vue'
-// 套餐总览
-import SetMealStatistics from './components/setMealStatistics.vue'
-// 订单列表
+import { getday } from '@/utils/formValidate'
 import OrderList from './components/orderList.vue'
+import {
+  InkPage,
+  InkCard,
+  InkSectionTitle,
+  InkStatCard,
+  InkEmptyState,
+} from '@/components/ink'
+
 @Component({
   name: 'Dashboard',
   components: {
-    Overview,
-    Orderview,
-    CuisineStatistics,
-    SetMealStatistics,
+    InkPage,
+    InkCard,
+    InkSectionTitle,
+    InkStatCard,
+    InkEmptyState,
     OrderList,
   },
 })
 export default class extends Vue {
-  private todayData = {} as any
   private overviewData = {}
   private orderviewData = {} as any
-  private flag = 2
-  private tateData = []
   private dishesData = {} as any
   private setMealData = {}
-  private orderListData = []
-  private counts = 0
-  private page: number = 1
-  private pageSize: number = 10
-  private status = 2
   private orderStatics = {} as any
+
+  get days() {
+    return getday()
+  }
+
+  get completionRate() {
+    return Number(((this.overviewData as any).orderCompletionRate || 0) * 100).toFixed(0)
+  }
+
   created() {
     this.init()
   }
@@ -79,27 +124,22 @@ export default class extends Vue {
       this.getSetMealStatisticsData()
     })
   }
-  // 获取营业数据
   async getBusinessData() {
     const data = await getBusinessData()
     this.overviewData = data.data.data
   }
-  // 获取今日订单
   async getOrderStatisticsData() {
     const data = await getOrderData()
     this.orderviewData = data.data.data
   }
-  // 获取菜品总览数据
   async getOverStatisticsData() {
     const data = await getOverviewDishes()
     this.dishesData = data.data.data
   }
-  // 获取套餐总览数据
   async getSetMealStatisticsData() {
     const data = await getSetMealStatistics()
     this.setMealData = data.data.data
   }
-  //获取待处理，待派送，派送中数量
   getOrderListBy3Status() {
     getOrderListBy({})
       .then((res) => {
@@ -116,70 +156,20 @@ export default class extends Vue {
 }
 </script>
 
-<style lang="scss">
-.dashboard-container.home {
-  position: relative;
-  padding: 12px 16px 20px;
-  background: linear-gradient(180deg, #f7f5f0 0%, #f3f2ee 100%);
-  min-height: calc(100vh - 60px);
-
-  &::before {
-    content: '';
-    position: fixed;
-    inset: 60px 0 0 190px;
-    pointer-events: none;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 4px 4px;
-    opacity: 0.25;
-  }
-
-  .container {
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid #e8e2d6;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(32, 36, 45, 0.05);
-    margin-bottom: 14px;
-    backdrop-filter: blur(1px);
-  }
-
-  .homeTitle {
-    font-family: 'STKaiti', 'KaiTi', serif;
-    font-size: 36px;
-    color: #1f2a37;
-    letter-spacing: 1px;
-    span {
-      color: #9f8354;
-      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      font-size: 14px;
-    }
-    i {
-      color: #7b8696;
-    }
-  }
-
-  .overviewBox li,
-  .orderviewBox li {
-    border: 1px solid #ebe6dc;
-    background: linear-gradient(180deg, #fff 0%, #fcfbf8 100%);
-    border-radius: 10px;
-  }
-
-  .overviewBox .num,
-  .orderviewBox .sumNum {
-    color: #111827;
-    font-family: 'Times New Roman', serif;
-  }
-
-  .orderviewBox .sumNum,
-  .orderviewBox .statusNum {
-    color: #b08a4d;
-  }
-
-  .homeMain {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    .container { margin-bottom: 0; }
-  }
-}
+<style lang="scss" scoped>
+.dashboard-home{position:relative}
+.dashboard-home::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(123,134,150,.12),rgba(123,134,150,0) 180px)}
+.detail-link{color:var(--ink-gold);font-size:14px}
+.stats-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.order-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.order-item{display:flex;justify-content:space-between;align-items:center;padding:16px;border:1px solid #e8dfd1;border-radius:12px;background:linear-gradient(180deg,#fff,#fcf9f3);color:#2f3a45}
+.order-item b{font-size:38px;color:#b08a4d;font-family:'Times New Roman',serif;line-height:1}
+.order-item span i{margin-right:6px;color:#4a6174}
+.double-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-wrap{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:stretch}
+.summary-item{border:1px solid #e8dfd1;border-radius:10px;padding:18px;background:#fff}
+.summary-item span{display:block;color:var(--ink-text-secondary)}
+.summary-item b{display:block;font-size:42px;color:#1c2530;font-family:'Times New Roman',serif;margin-top:8px}
+.add-btn{display:flex;align-items:center;justify-content:center;padding:0 20px;border-radius:12px;border:1px solid #c8a96d;background:linear-gradient(90deg,#2f4858,#3c5d71);color:#fff;min-width:130px}
+.order-empty-card{margin-top:14px}
 </style>
