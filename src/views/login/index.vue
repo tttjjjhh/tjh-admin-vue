@@ -7,10 +7,9 @@
           <div class="login-form-title">
             <img
               src="@/assets/login/icon_logo.png"
-              style="width: 149px; height: 38px"
+              style="width: 180px; height: auto"
               alt=""
             />
-            <!-- <span class="title-label">苍穹外卖</span> -->
           </div>
           <el-form-item prop="username">
             <el-input
@@ -175,7 +174,7 @@ export default class extends Vue {
     border-radius: 0;
     font-size: 12px;
     font-weight: 400;
-    color: #333333;
+    color: #000000;
     height: 32px;
     line-height: 32px;
   }
@@ -204,13 +203,13 @@ export default class extends Vue {
   font-size: 12px;
   border: 0;
   font-weight: 500;
-  color: #333333;
+  color: #ffffff;
   // background: #09a57a;
-  background-color: #ffc200;
+  background-color: #1890FF;
   &:hover,
   &:focus {
     // background: #09a57a;
-    background-color: #ffc200;
+    background-color: #1890FF;
     color: #ffffff;
   }
 }
@@ -223,7 +222,7 @@ export default class extends Vue {
   .title-label {
     font-weight: 500;
     font-size: 20px;
-    color: #333333;
+    color: #ffffff;
     margin-left: 10px;
   }
 }
