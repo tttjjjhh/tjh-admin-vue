@@ -133,11 +133,13 @@ export default class extends Vue {
 
 <style lang="scss" scoped>
 .logo {
-  position: relative;
-  background: linear-gradient(180deg, #171f28 0%, #1d2b37 60%, #223645 100%);
-  padding: 8px 12px;
-  height: 78px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  background-color: #1890FF;
+  padding: 15px 0 0;
+  height: 60px;
+  img {
+    display: inline-block;
+  }
 }
 .logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(214,26,42,.35);opacity:.25}
 .sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(0,0,0,.3));}

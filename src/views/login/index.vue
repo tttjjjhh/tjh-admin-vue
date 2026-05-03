@@ -5,7 +5,11 @@
       <div class="login-form">
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">
-            <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
+            <img
+              src="@/assets/login/icon_logo.png"
+              style="width: 180px; height: auto"
+              alt=""
+            />
           </div>
           <el-form-item prop="username">
             <el-input
@@ -172,7 +176,7 @@ export default class extends Vue {
     border-radius: 0;
     font-size: 12px;
     font-weight: 400;
-    color: #333333;
+    color: #000000;
     height: 32px;
     line-height: 32px;
   }
@@ -203,11 +207,11 @@ export default class extends Vue {
   font-weight: 500;
   color: #ffffff;
   // background: #09a57a;
-  background-color: #1890ff;
+  background-color: #1890FF;
   &:hover,
   &:focus {
     // background: #09a57a;
-    background-color: #1890ff;
+    background-color: #1890FF;
     color: #ffffff;
   }
 }
@@ -216,7 +220,12 @@ export default class extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 18px;
-  img { width: 270px; max-width: 100%; height: auto; }
+  margin-bottom: 40px;
+  .title-label {
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+  }
 }
 </style>

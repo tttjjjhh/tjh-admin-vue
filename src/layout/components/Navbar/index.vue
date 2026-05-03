@@ -307,8 +307,7 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
-  background: linear-gradient(90deg, rgba(248,245,239,.92), rgba(242,236,226,.95));
-  border-bottom: 1px solid #e4dccf;
+  background: #1890FF;
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .statusBox {
