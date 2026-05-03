@@ -139,7 +139,7 @@ export default class extends Vue {
   height: 78px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(214,26,42,.35);opacity:.25}
+.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.08);opacity:.15}
 .sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(0,0,0,.3));}
 .brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(236,224,205,.8)}
 .sidebar-logo-mini {
@@ -150,8 +150,7 @@ export default class extends Vue {
   position: relative;
   background: linear-gradient(180deg, #1a232c 0%, #1f3240 55%, #1c2a35 100%);
 }
-.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%);opacity:.2;pointer-events:none}
-.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(214,26,42,.45);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
+.el-scrollbar::before{content:'';position:absolute;left:0;bottom:0;width:100%;height:80px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.04));pointer-events:none}
 
 .el-menu {
   border: none;

@@ -48,7 +48,7 @@ body {
   pointer-events: none;
   background: linear-gradient(180deg, rgba(120, 125, 132, 0.12), rgba(120, 125, 132, 0));
   clip-path: polygon(0 80%, 12% 55%, 24% 74%, 38% 50%, 52% 68%, 68% 45%, 82% 62%, 100% 50%, 100% 100%, 0 100%);
-  opacity: 0.25;
+  opacity: 0.1;
 }
 
 .app-container,
@@ -125,7 +125,7 @@ body {
 .el-table td,
 .el-table th {
   border-bottom: 1px solid #ebe4d8;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .el-table--enable-row-hover .el-table__body tr:hover > td {
@@ -158,6 +158,10 @@ body {
   background: var(--ink-primary);
   border-color: var(--ink-primary);
   color: #fff;
+}
+
+.pageList {
+  margin-top: 18px;
 }
 
 .status-dot {
