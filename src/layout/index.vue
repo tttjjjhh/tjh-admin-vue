@@ -57,7 +57,7 @@ export default class extends mixins(ResizeMixin) {
 
 .main-container {
   height: 100%;
-  background: #f3f4f7;
+  background: transparent;
   position: relative;
   width: calc(100% - 190px);
 }
@@ -76,7 +76,7 @@ export default class extends mixins(ResizeMixin) {
   min-height: 100%;
   transition: margin-left 0.28s;
   margin-left: $sideBarWidth;
-  background: $gray-5;
+  background: transparent;
   position: relative;
 }
 
