@@ -5,21 +5,24 @@
     width: 100% !important;
 
     .el-menu-item {
-      color: rgba(255,255,255,0.82);
-      height: 44px;
+      color: #4A3A28;
+      height: 45px;
       line-height: 38px;
-      padding: 0 0 0 17px !important;
+      padding: 0 12px 0 17px !important;
       margin: 0 0 8px 0;
       border-radius: 14px;
+      background: transparent;
+      border: 1px solid transparent;
 
       // border-radius: 0 21px 21px 0 !important;
       &:hover {
-        color: #3c2f22 !important;
-        background: rgba(255,255,255,0.08) !important;
+        color: #2B2118 !important;
+        background: rgba(255,255,255,0.45) !important;
+        border: 1px solid rgba(184,135,59,0.18);
         border-radius: 14px;
 
         span {
-          color: rgba(255,255,255,0.92) !important;
+          color: #2B2118 !important;
         }
       }
 
@@ -34,10 +37,10 @@
     }
 
     .router-link-active .el-menu-item {
-      background: linear-gradient(90deg, #F2E4BF 0%, #E8D3A0 100%) !important;
+      background: linear-gradient(90deg, #FFF4D8 0%, #E9C77E 100%) !important;
       color: #2C241B !important;
       border-radius: 14px !important;
-      border: 1px solid rgba(167,122,50,0.35);
+      border: 1px solid rgba(184,135,59,0.45);
       box-shadow: 0 4px 12px rgba(120,90,45,0.10);
       position: relative;
       &::before {
@@ -53,7 +56,7 @@
       }
 
       span {
-        color: #2C241B !important;
+        color: #2B2118 !important;
         font-weight: 500 !important;
       }
       i,
@@ -69,7 +72,7 @@
 
   .el-submenu.is-active {
     >.el-submenu__title {
-      color: rgba(255,255,255,0.82) !important;
+      color: #4A3A28 !important;
     }
   }
 
@@ -87,7 +90,7 @@
 
   .el-menu-item {
     i {
-      color: rgba(255,255,255,0.75);
+      color: #8A5A24;
       font-size: 20px;
       margin-right: 9px;
     }
@@ -126,7 +129,7 @@
 
   .el-icon-arrow-down {
     &:before {
-      color: rgba(255,255,255,0.75);
+      color: #8A5A24;
     }
   }
 
@@ -181,7 +184,7 @@
     padding-left: 0 !important;
 
     &:hover {
-      background: rgba(255,255,255,0.08) !important;
+      background: rgba(255,255,255,0.45) !important;
     }
 
     i {

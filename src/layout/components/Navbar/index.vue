@@ -307,9 +307,9 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
-  background: rgba(251, 248, 241, 0.92);
+  background: rgba(255, 251, 243, 0.95);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(185, 139, 66, 0.18);
+  border-bottom: 1px solid rgba(165,130,80,0.18);
   box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
@@ -345,7 +345,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #5E4A35;
+    color: #4A3A28;
     font-size: 14px;
 
     span {
@@ -467,7 +467,7 @@ export default class extends Vue {
   .businessBtn {
     height: 22px;
     line-height: 20px;
-    background: linear-gradient(135deg, #C65A3A 0%, #A74432 100%);
+    background: linear-gradient(135deg, #C45A3C 0%, #A84432 100%);
     border: 1px solid rgba(120, 50, 35, 0.25);
     border-radius: 999px;
     display: inline-block;

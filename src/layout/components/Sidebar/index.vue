@@ -134,10 +134,12 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .logo {
   text-align: center;
-  background: #FBF8F1;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(184,135,59,0.18);
+  border-radius: 8px;
   padding: 15px 0 0;
   height: 60px;
-  border-bottom: 1px solid rgba(139,111,72,0.16);
+  border-bottom: 1px solid rgba(165,130,80,0.18);
   img {
     display: inline-block;
   }
@@ -151,11 +153,11 @@ export default class extends Vue {
 .el-scrollbar {
   height: 100%;
   position: relative;
-  background: linear-gradient(180deg, #243847 0%, #1F3140 100%);
-  border-right: 1px solid rgba(185,139,66,0.18);
+  background: linear-gradient(180deg, #F4E8D0 0%, #EBD9B7 100%);
+  border-right: 1px solid rgba(165,130,80,0.18);
 }
-.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%);opacity:.22;pointer-events:none}
-.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(185,139,66,.42);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
+.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(56,52,45,.10),rgba(56,52,45,0) 70%);opacity:.12;pointer-events:none}
+.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(185,139,66,.35);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
 
 .el-menu {
   border: none;
