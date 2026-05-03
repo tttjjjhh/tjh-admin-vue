@@ -16181,3 +16181,26 @@ input[type="number"] {
     }
   }
 }
+
+/* Global layer fix for dropdowns/dialogs/popovers in header and content areas */
+.el-dropdown-menu,
+.el-select-dropdown,
+.el-picker-panel,
+.el-popover,
+.el-tooltip__popper,
+.el-message-box__wrapper,
+.el-dialog__wrapper,
+.el-popper {
+  z-index: 9999 !important;
+}
+
+.v-modal {
+  z-index: 9998 !important;
+}
+
+.app-main,
+.main-container,
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
