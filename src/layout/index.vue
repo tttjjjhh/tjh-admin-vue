@@ -76,8 +76,22 @@ export default class extends mixins(ResizeMixin) {
   min-height: 100%;
   transition: margin-left 0.28s;
   margin-left: $sideBarWidth;
-  background: $gray-5;
+  background: linear-gradient(180deg, #f8f5ef 0%, #f3efe7 100%);
   position: relative;
+  overflow: hidden;
+}
+
+.main-container::before {
+  content: '';
+  position: absolute;
+  top: 58px;
+  left: 0;
+  right: 0;
+  height: 82px;
+  pointer-events: none;
+  opacity: 0.18;
+  background: linear-gradient(180deg, rgba(83, 92, 103, 0.22), rgba(83, 92, 103, 0));
+  clip-path: polygon(0 80%, 9% 58%, 18% 75%, 31% 52%, 44% 70%, 57% 49%, 71% 66%, 84% 52%, 100% 68%, 100% 100%, 0 100%);
 }
 
 .sidebar-container {

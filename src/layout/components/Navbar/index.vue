@@ -306,9 +306,9 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .navbar {
   height: 60px;
-  // overflow: hidden;
   position: relative;
-  background: linear-gradient(90deg, #103a7a, #1b67c9 48%, #3fa7ff);
+  background: linear-gradient(90deg, rgba(248,245,239,.92), rgba(242,236,226,.95));
+  border-bottom: 1px solid #e4dccf;
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .statusBox {
@@ -338,7 +338,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #eef6ff;
+    color: #2f3a45;
     font-size: 14px;
 
     span {
@@ -347,7 +347,7 @@ export default class extends Vue {
       display: inline-block;
       cursor: pointer;
       &:hover {
-        background: rgba(255, 255, 255, 0.16);
+        background: rgba(47, 72, 88, 0.08);
       }
     }
     .amendPwdIcon {
@@ -432,7 +432,8 @@ export default class extends Vue {
 
     .el-button--primary {
       // height: 32px;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(47, 72, 88, 0.06);
+      color: #2f3a45;
       border-radius: 4px;
       padding-top: 0px;
       padding-bottom: 0px;
@@ -454,18 +455,18 @@ export default class extends Vue {
       }
     }
   }
-  .businessBtn {
+.businessBtn {
     height: 22px;
     line-height: 20px;
-    background: #fd3333;
-    border: 1px solid #ffffff;
+    background: #2f4858;
+    border: 1px solid #d4c1a1;
     border-radius: 4px;
     display: inline-block;
     padding: 0 6px;
     color: #fff;
   }
-  .closing {
-    background: #6a6a6a;
+.closing {
+    background: #7f6a4b;
   }
   .navicon {
     i {
