@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-box">
       <div class="login-visual">
-        <img src="@/assets/login/login-l.png" alt="" />
+        <img src="@/assets/img_denglu_bj.jpg" alt="" />
         <div class="ink-wash-mask" />
         <div class="visual-content">
           <h1>忆流年</h1>
@@ -139,10 +139,10 @@ export default class extends Vue {
   align-items: center;
   height: 100%;
   background:
-    radial-gradient(circle at 18% 12%, rgba(31, 42, 53, 0.16) 0%, rgba(31, 42, 53, 0) 32%),
-    radial-gradient(circle at 82% 18%, rgba(201, 154, 46, 0.16) 0%, rgba(201, 154, 46, 0) 30%),
-    radial-gradient(circle at 50% 86%, rgba(122, 106, 85, 0.08) 0%, rgba(122, 106, 85, 0) 36%),
-    linear-gradient(180deg, #fbf8f1 0%, #f7f1e6 52%, #efe3cc 100%);
+    radial-gradient(circle at 14% 15%, rgba(216, 199, 163, 0.3) 0%, rgba(216, 199, 163, 0) 34%),
+    radial-gradient(circle at 82% 18%, rgba(163, 145, 112, 0.18) 0%, rgba(163, 145, 112, 0) 32%),
+    radial-gradient(circle at 52% 88%, rgba(31, 47, 44, 0.08) 0%, rgba(31, 47, 44, 0) 40%),
+    linear-gradient(180deg, #f8f5ed 0%, #f7f1e6 50%, #efe5d0 100%);
 }
 
 .login-box {
@@ -152,7 +152,7 @@ export default class extends Vue {
   display: flex;
   background: rgba(255, 252, 246, 0.94);
   border: 1px solid #e6d8c1;
-  box-shadow: 0 24px 58px rgba(34, 36, 33, 0.18);
+  box-shadow: 0 20px 50px rgba(63, 52, 37, 0.16);
   overflow: hidden;
 }
 
@@ -166,7 +166,7 @@ export default class extends Vue {
     height: 100%;
     object-fit: cover;
     border-radius: 24px 0 0 24px;
-    filter: saturate(65%) brightness(1.02);
+    filter: saturate(55%) brightness(1.01);
   }
 }
 
@@ -175,32 +175,32 @@ export default class extends Vue {
   inset: 0;
   background:
     radial-gradient(circle at 18% 25%, rgba(18, 30, 43, 0.3) 0%, rgba(18, 30, 43, 0.05) 48%, rgba(18, 30, 43, 0) 72%),
-    radial-gradient(circle at 72% 18%, rgba(216, 169, 58, 0.26) 0%, rgba(216, 169, 58, 0) 40%),
-    linear-gradient(120deg, rgba(15, 30, 45, 0.54) 0%, rgba(15, 30, 45, 0.18) 56%, rgba(251, 248, 241, 0.15) 100%);
+    radial-gradient(circle at 72% 18%, rgba(216, 169, 58, 0.22) 0%, rgba(216, 169, 58, 0) 40%),
+    linear-gradient(120deg, rgba(31, 47, 44, 0.46) 0%, rgba(31, 47, 44, 0.16) 56%, rgba(251, 248, 241, 0.16) 100%);
 }
 
 .visual-content {
   position: absolute;
   left: 56px;
   bottom: 64px;
-  color: #f6efe3;
+  color: #f8f0df;
 
   h1 {
-    font-size: 56px;
-    letter-spacing: 6px;
+    font-size: 58px;
+    letter-spacing: 8px;
     margin: 0 0 8px;
     font-weight: 600;
   }
 
   .cn-subtitle {
-    font-size: 16px;
+    font-size: 17px;
     margin: 0 0 12px;
   }
 
   .en-subtitle {
     font-size: 13px;
     letter-spacing: 1px;
-    color: #f1e2c3;
+    color: #f4e4c4;
   }
 
   .seal {
@@ -222,7 +222,7 @@ export default class extends Vue {
 }
 
 .login-form {
-  background: linear-gradient(180deg, #fffefb 0%, #fbf6ed 100%);
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.9) 0%, rgba(249, 242, 228, 0.9) 100%);
   width: 44%;
   border-radius: 0 24px 24px 0;
   display: flex;
@@ -248,13 +248,13 @@ export default class extends Vue {
   }
   .el-input__inner {
     border: 1px solid #d7cbb9;
-    border-radius: 8px;
-    background: #fffaf2;
+    border-radius: 14px;
+    background: rgba(255, 250, 240, 0.92);
     font-size: 13px;
     font-weight: 400;
     color: #000000;
-    height: 40px;
-    line-height: 40px;
+    height: 46px;
+    line-height: 46px;
   }
   .el-input__inner:focus {
     border-color: #c99a2e;
@@ -267,31 +267,34 @@ export default class extends Vue {
     padding-left: 26px;
   }
   .el-input__inner::placeholder {
-    color: #aeb5c4;
+    color: #b8a98a;
   }
   .el-form-item--medium .el-form-item__content {
-    line-height: 40px;
+    line-height: 46px;
   }
   .el-input--medium .el-input__icon {
-    line-height: 40px;
-    color: #6e6254;
+    line-height: 46px;
+    color: #6f604b;
   }
 }
 
 .login-btn {
   border-radius: 22px;
-  padding: 11px 20px !important;
+  padding: 12px 20px !important;
   margin-top: 14px;
   font-weight: 500;
   font-size: 12px;
   border: 1px solid #c99a2e;
   color: #3b2d13;
-  background: linear-gradient(90deg, #d8a93a 0%, #c99a2e 100%);
+  background: linear-gradient(90deg, #c89b3c 0%, #d8b75f 100%);
+  height: 46px;
   &:hover,
   &:focus {
-    background: linear-gradient(90deg, #e1b44a 0%, #d3a33c 100%);
-    border-color: #d3a33c;
+    background: linear-gradient(90deg, #b8892f 0%, #cca94f 100%);
+    border-color: #c89b3c;
     color: #3b2d13;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(166, 124, 34, 0.2);
   }
 }
 .login-form-title {
