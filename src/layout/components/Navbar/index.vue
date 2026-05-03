@@ -307,8 +307,9 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
-  background: #FBF7EF;
-  border-bottom: 1px solid rgba(139, 111, 72, 0.18);
+  background: rgba(251, 248, 241, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(185, 139, 66, 0.18);
   box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
@@ -327,12 +328,12 @@ export default class extends Vue {
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.025);
+      background: rgba(185, 139, 66, 0.10);
     }
     ::v-deep svg,
     ::v-deep i {
-      color: #6B4F2A !important;
-      fill: #6B4F2A !important;
+      color: #8A5A24 !important;
+      fill: #8A5A24 !important;
     }
   }
 
@@ -344,7 +345,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #5A4632;
+    color: #5E4A35;
     font-size: 14px;
 
     span {
@@ -353,7 +354,9 @@ export default class extends Vue {
       display: inline-block;
       cursor: pointer;
       &:hover {
-        background: rgba(198, 168, 112, 0.18);
+        background: rgba(185, 139, 66, 0.08);
+        border-radius: 9px;
+        color: #A8792A;
       }
     }
     .amendPwdIcon {
@@ -464,12 +467,14 @@ export default class extends Vue {
   .businessBtn {
     height: 22px;
     line-height: 20px;
-    background: linear-gradient(90deg, #a84a3a 0%, #b75b45 100%);
+    background: linear-gradient(135deg, #C65A3A 0%, #A74432 100%);
     border: 1px solid rgba(120, 50, 35, 0.25);
     border-radius: 999px;
     display: inline-block;
     padding: 0 6px;
     color: #fff;
+    box-shadow: 0 4px 10px rgba(180, 75, 53, 0.18);
+    font-weight: 600;
   }
   .closing {
     background: linear-gradient(90deg, #8f7860 0%, #a08a72 100%);
