@@ -306,7 +306,6 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .navbar {
   height: 60px;
-  // overflow: hidden;
   position: relative;
   background: #1890FF;
 
@@ -338,7 +337,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #333333;
+    color: #2f3a45;
     font-size: 14px;
 
     span {
@@ -347,7 +346,7 @@ export default class extends Vue {
       display: inline-block;
       cursor: pointer;
       &:hover {
-        background: rgba(255, 255, 255, 0.52);
+        background: rgba(47, 72, 88, 0.08);
       }
     }
     .amendPwdIcon {
@@ -432,7 +431,8 @@ export default class extends Vue {
 
     .el-button--primary {
       // height: 32px;
-      background: rgba(255, 255, 255, 0.52);
+      background: rgba(47, 72, 88, 0.06);
+      color: #2f3a45;
       border-radius: 4px;
       padding-top: 0px;
       padding-bottom: 0px;
@@ -454,18 +454,18 @@ export default class extends Vue {
       }
     }
   }
-  .businessBtn {
+.businessBtn {
     height: 22px;
     line-height: 20px;
-    background: #fd3333;
-    border: 1px solid #ffffff;
+    background: #2f4858;
+    border: 1px solid #d4c1a1;
     border-radius: 4px;
     display: inline-block;
     padding: 0 6px;
     color: #fff;
   }
-  .closing {
-    background: #6a6a6a;
+.closing {
+    background: #7f6a4b;
   }
   .navicon {
     i {
@@ -595,11 +595,12 @@ export default class extends Vue {
 
 .userInfo {
   background: #fff;
+  color: #1f2d3d;
   position: absolute;
   top: 0px;
   left: 0;
   z-index: 99;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 24px rgba(13, 47, 99, 0.18);
   width: 100%;
   border-radius: 4px;
   line-height: 32px;
@@ -621,6 +622,7 @@ export default class extends Vue {
     height: 32px;
     line-height: 32px;
     padding: 0 5px 0 7px;
+    color: #3a4a62;
     i {
       margin-left: 10px;
 
@@ -629,7 +631,8 @@ export default class extends Vue {
       float: right;
     }
     &:hover {
-      background: #f6f1e1;
+      background: #eaf4ff;
+      color: #1565c0;
     }
   }
 }

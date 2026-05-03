@@ -117,4 +117,69 @@ export default class extends Vue {
 </script>
 
 <style lang="scss">
+.dashboard-container.home {
+  position: relative;
+  padding: 12px 16px 20px;
+  background: linear-gradient(180deg, #f7f5f0 0%, #f3f2ee 100%);
+  min-height: calc(100vh - 60px);
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 60px 0 0 190px;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 4px 4px;
+    opacity: 0.25;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #e8e2d6;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(32, 36, 45, 0.05);
+    margin-bottom: 14px;
+    backdrop-filter: blur(1px);
+  }
+
+  .homeTitle {
+    font-family: 'STKaiti', 'KaiTi', serif;
+    font-size: 36px;
+    color: #1f2a37;
+    letter-spacing: 1px;
+    span {
+      color: #9f8354;
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 14px;
+    }
+    i {
+      color: #7b8696;
+    }
+  }
+
+  .overviewBox li,
+  .orderviewBox li {
+    border: 1px solid #ebe6dc;
+    background: linear-gradient(180deg, #fff 0%, #fcfbf8 100%);
+    border-radius: 10px;
+  }
+
+  .overviewBox .num,
+  .orderviewBox .sumNum {
+    color: #111827;
+    font-family: 'Times New Roman', serif;
+  }
+
+  .orderviewBox .sumNum,
+  .orderviewBox .statusNum {
+    color: #b08a4d;
+  }
+
+  .homeMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    .container { margin-bottom: 0; }
+  }
+}
 </style>

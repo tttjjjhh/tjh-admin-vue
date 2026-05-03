@@ -11,14 +11,13 @@
         alt=""
         style="width: 120px; height: 31px"
       /> -->
-      <div v-if="!isCollapse"
-           class="sidebar-logo">
-        <img src="@/assets/login/logo.png"
-             style="width: 120px; height: 31px">
+      <div v-if="!isCollapse" class="sidebar-logo">
+        <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
+        <p class="brand-slogan">忆流年 · 岁月静好</p>
       </div>
       <div v-else
            class="sidebar-logo-mini">
-        <img src="@/assets/login/mini-logo.png">
+        <img src="@/assets/login/yiliunian-mini.svg" alt="忆流年" />
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -142,20 +141,23 @@ export default class extends Vue {
     display: inline-block;
   }
 }
+.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(214,26,42,.35);opacity:.25}
+.sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(0,0,0,.3));}
+.brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(236,224,205,.8)}
 .sidebar-logo-mini {
-  img {
-    width: 30px;
-    height: 30px;
-  }
+  img { width: 30px; height: 30px; display: block; margin: 0 auto; }
 }
 .el-scrollbar {
   height: 100%;
-  background-color: rgb(52, 55, 68);
+  position: relative;
+  background: linear-gradient(180deg, #1a232c 0%, #1f3240 55%, #1c2a35 100%);
 }
+.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%);opacity:.2;pointer-events:none}
+.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(214,26,42,.45);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
 
 .el-menu {
   border: none;
-  height: calc(95vh - 23px);
+  height: calc(95vh - 40px);
   width: 100% !important;
   padding: 47px 15px 0;
 }

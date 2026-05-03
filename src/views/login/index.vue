@@ -124,14 +124,15 @@ export default class extends Vue {
   align-items: center;
   height: 100%;
   // background: #476dbe;
-  background-color: #333;
+  background: radial-gradient(circle at 20% 15%, #8acbff 0%, #2e86e6 42%, #0d2f63 100%);
 }
 
 .login-box {
   width: 1000px;
   height: 474.38px;
-  border-radius: 8px;
+  border-radius: 14px;
   display: flex;
+  box-shadow: 0 18px 46px rgba(9, 42, 92, 0.35);
   img {
     width: 60%;
     height: auto;
@@ -151,6 +152,7 @@ export default class extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 14px;
   .el-form {
     width: 214px;
     height: 307px;
@@ -214,7 +216,7 @@ export default class extends Vue {
   }
 }
 .login-form-title {
-  height: 36px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
