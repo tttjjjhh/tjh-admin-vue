@@ -5,7 +5,7 @@
     width: 100% !important;
 
     .el-menu-item {
-      color: #aeb5c4;
+      color: #d8e2ee;
       height: 42px;
       line-height: 38px;
       padding: 0 0 0 17px !important;
@@ -14,8 +14,8 @@
       // border-radius: 0 21px 21px 0 !important;
       &:hover {
         color: #ffffff !important;
-        background: #4D4D4D !important;
-        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-radius: 24px;
 
         span {
           color: #ffffff !important;
@@ -33,12 +33,12 @@
     }
 
     .router-link-active .el-menu-item {
-      background-color: #E3E3E3 !important;
-      color: #333333 !important;
-      border-radius: 4px !important;
+      background: linear-gradient(90deg, #f7f5f0 0%, #e8e2d6 100%) !important;
+      color: #24384f !important;
+      border-radius: 24px !important;
 
       span {
-        color: #333333 !important;
+        color: #24384f !important;
         font-weight: 500 !important;
       }
     }
@@ -57,12 +57,12 @@
   .el-submenu {
     >.el-submenu__title {
       min-width: 190px !important;
-      background-color: #272a36 !important;
+      background-color: #1d2f4d !important;
     }
 
     .el-menu-item {
       min-width: 190px !important;
-      background-color: #272a36 !important;
+      background-color: #1d2f4d !important;
     }
   }
 
@@ -172,11 +172,11 @@
 
   .sidebar-container .router-link-active .el-menu-item,
   .el-menu-item.is-active {
-    background-color: #E3E3E3 !important;
+    background: linear-gradient(90deg, #f7f5f0 0%, #e8e2d6 100%) !important;
   }
 
   .sidebar-container .router-link-active .el-menu-item:hover,
   .el-menu-item.is-active {
-    background-color: #FFC200 !important;
+    background: linear-gradient(90deg, #f7f5f0 0%, #e8e2d6 100%) !important;
   }
 }
