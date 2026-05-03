@@ -132,17 +132,17 @@ export default class extends Vue {
 
 <style lang="scss" scoped>
 .logo {
-  background: linear-gradient(135deg, #0f4da8, #1890ff 55%, #69c0ff);
+  background: linear-gradient(145deg, #0d2f63, #1b67c9 58%, #5db6ff);
   padding: 8px 10px;
   height: 60px;
 }
-.sidebar-logo img{width:168px;height:40px;object-fit:contain;display:block}
+.sidebar-logo img{width:170px;height:40px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(0,0,0,.12));}
 .sidebar-logo-mini {
   img { width: 30px; height: 30px; display: block; margin: 0 auto; }
 }
 .el-scrollbar {
   height: 100%;
-  background-color: rgb(52, 55, 68);
+  background: linear-gradient(180deg, #1d2f4d 0%, #1b2a44 60%, #17253b 100%);
 }
 
 .el-menu {

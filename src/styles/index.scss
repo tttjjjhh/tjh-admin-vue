@@ -5,6 +5,49 @@
 @import './sidebar.scss';
 /* Global scss */
 
+
+
+:root {
+  --brand-primary: #1890ff;
+  --brand-primary-light: #e6f7ff;
+  --brand-primary-dark: #0f4da8;
+}
+
+.el-button--primary {
+  background: linear-gradient(90deg, var(--brand-primary-dark), var(--brand-primary));
+  border-color: var(--brand-primary);
+  color: #fff;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background: linear-gradient(90deg, #2b63ba, #40a9ff);
+  border-color: #40a9ff;
+}
+
+.el-tabs__item.is-active,
+.el-tabs__item:hover,
+.el-pagination.is-background .el-pager li:not(.disabled).active,
+.el-radio__input.is-checked + .el-radio__label,
+.el-checkbox__input.is-checked + .el-checkbox__label,
+.el-link.el-link--primary {
+  color: var(--brand-primary) !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner,
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-switch.is-checked .el-switch__core,
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  border-color: var(--brand-primary) !important;
+  background-color: var(--brand-primary) !important;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: #40a9ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.12);
+}
 body {
   height: 100%;
   min-width: 1000px;

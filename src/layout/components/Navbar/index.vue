@@ -308,7 +308,7 @@ export default class extends Vue {
   height: 60px;
   // overflow: hidden;
   position: relative;
-  background: linear-gradient(90deg, #0f4da8, #1890ff 45%, #69c0ff);
+  background: linear-gradient(90deg, #103a7a, #1b67c9 48%, #3fa7ff);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .statusBox {
@@ -338,7 +338,7 @@ export default class extends Vue {
 
     margin-right: 20px;
 
-    color: #f5faff;
+    color: #eef6ff;
     font-size: 14px;
 
     span {
@@ -347,7 +347,7 @@ export default class extends Vue {
       display: inline-block;
       cursor: pointer;
       &:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.16);
       }
     }
     .amendPwdIcon {
@@ -432,7 +432,7 @@ export default class extends Vue {
 
     .el-button--primary {
       // height: 32px;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.14);
       border-radius: 4px;
       padding-top: 0px;
       padding-bottom: 0px;
