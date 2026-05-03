@@ -134,8 +134,8 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .logo {
   text-align: center;
-  background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(165,130,80,0.18);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(184,135,59,0.18);
   border-radius: 8px;
   padding: 15px 0 0;
   height: 60px;
@@ -153,7 +153,7 @@ export default class extends Vue {
 .el-scrollbar {
   height: 100%;
   position: relative;
-  background: #E8D8BC;
+  background: linear-gradient(180deg, #F4E8D0 0%, #EBD9B7 100%);
   border-right: 1px solid rgba(165,130,80,0.18);
 }
 .el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(56,52,45,.10),rgba(56,52,45,0) 70%);opacity:.12;pointer-events:none}
