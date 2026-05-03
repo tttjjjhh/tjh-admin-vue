@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <InkCard class="chart-card">
     <h2 class="homeTitle">用户统计</h2>
     <div class="charBox">
       <div id="usermain" style="width: 100%; height: 320px"></div>
@@ -8,14 +8,17 @@
         <li class="three"><span></span>新增用户（个）</li>
       </ul>
     </div>
-  </div>
+  </InkCard>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import * as echarts from 'echarts'
+import InkCard from '@/components/ink/InkCard.vue'
+import { inkAxisStyle, inkTooltip, inkLegend } from '@/utils/inkEcharts'
 @Component({
   name: 'UserStatistics',
+  components: { InkCard },
 })
 export default class extends Vue {
   @Prop() private userdata!: any
@@ -39,16 +42,7 @@ export default class extends Vue {
       //   top: 'bottom',
       //   data: ['用户总量', '新增用户'],
       // },
-      tooltip: {
-        trigger: 'axis',
-        backgroundColor: '#fff', //背景颜色（此时为默认色）
-        borderRadius: 2, //边框圆角
-        textStyle: {
-          color: '#333', //字体颜色
-          fontSize: 12, //字体大小
-          fontWeight: 300,
-        },
-      },
+      tooltip: inkTooltip,
       grid: {
         top: '5%',
         left: '20',
@@ -59,20 +53,8 @@ export default class extends Vue {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        axisLabel: {
-          //X轴字体颜色
-          textStyle: {
-            color: '#666',
-            fontSize: '12px',
-          },
-        },
-        axisLine: {
-          //X轴线颜色
-          lineStyle: {
-            color: '#E5E4E4',
-            width: 1, //x轴线的宽度
-          },
-        },
+        axisLabel: inkAxisStyle.axisLabel,
+        axisLine: inkAxisStyle.axisLine,
         data: this.userdata.dateList, //后端传来的动态数据
       },
       yAxis: [
@@ -81,13 +63,8 @@ export default class extends Vue {
           min: 0,
           //max: 500,
           //interval: 100,
-          axisLabel: {
-            textStyle: {
-              color: '#666',
-              fontSize: '12px',
-            },
-            // formatter: "{value} ml",//单位
-          },
+          axisLabel: inkAxisStyle.axisLabel,
+          splitLine: inkAxisStyle.splitLine,
         }, //左侧值
       ],
       series: [
@@ -101,9 +78,9 @@ export default class extends Vue {
           // symbol:"circle", //设置折线点定位实心点
           itemStyle: {
             normal: {
-              color: '#FFD000',
+              color: '#B08A4D',
               lineStyle: {
-                color: '#FFD000',
+                color: '#B08A4D',
               },
             },
             emphasis: {
@@ -125,10 +102,10 @@ export default class extends Vue {
           // symbol:"circle", //设置折线点定位实心点
           itemStyle: {
             normal: {
-              color: '#FD7F7F',
+              color: '#C53B2C',
               fontWeigth: 300,
               lineStyle: {
-                color: '#FD7F7F',
+                color: '#C53B2C',
               },
             },
             emphasis: {

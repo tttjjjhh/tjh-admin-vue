@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <InkCard class="chart-card">
     <h2 class="homeTitle">营业额统计</h2>
     <div class="charBox">
       <div id="main" style="width: 100%; height: 320px"></div>
@@ -7,14 +7,17 @@
         <li>营业额(元)</li>
       </ul>
     </div>
-  </div>
+  </InkCard>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import * as echarts from 'echarts'
+import InkCard from '@/components/ink/InkCard.vue'
+import { inkAxisStyle, inkTooltip, inkLegend } from '@/utils/inkEcharts'
 @Component({
   name: 'TurnoverStatistics',
+  components: { InkCard },
 })
 export default class extends Vue {
   @Prop() private turnoverdata!: any
@@ -41,9 +44,7 @@ export default class extends Vue {
       //     fontWeight: 'normal',
       //   },
       // },
-      tooltip: {
-        trigger: 'axis',
-      },
+      tooltip: inkTooltip,
       grid: {
         top: '5%',
         left: '10',
@@ -54,20 +55,8 @@ export default class extends Vue {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        axisLabel: {
-          //X轴字体颜色
-          textStyle: {
-            color: '#666',
-            fontSize: '12px',
-          },
-        },
-        axisLine: {
-          //X轴线颜色
-          lineStyle: {
-            color: '#E5E4E4',
-            width: 1, //x轴线的宽度
-          },
-        },
+        axisLabel: inkAxisStyle.axisLabel,
+        axisLine: inkAxisStyle.axisLine,
         data: this.turnoverdata.dateList, //后端传来的动态数据
       },
       yAxis: [
@@ -76,13 +65,8 @@ export default class extends Vue {
           min: 0,
           //max: 50000,
           //interval: 1000,
-          axisLabel: {
-            textStyle: {
-              color: '#666',
-              fontSize: '12px',
-            }
-            // formatter: "{value} ml",//单位
-          }
+          axisLabel: inkAxisStyle.axisLabel,
+          splitLine: inkAxisStyle.splitLine
         }
       ],
       series: [
@@ -96,9 +80,9 @@ export default class extends Vue {
           // symbol:"circle", //设置折线点定位实心点
           itemStyle: {
             normal: {
-              color: '#F29C1B',
+              color: '#2F4858',
               lineStyle: {
-                color: '#FFD000',
+                color: '#B08A4D',
               },
             },
             emphasis: {
