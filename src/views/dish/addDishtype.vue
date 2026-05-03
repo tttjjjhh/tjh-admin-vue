@@ -1,8 +1,8 @@
 <template>
-  <div :key="vueRest"
-       class="addBrand-container">
-    <div :key="restKey"
-         class="container">
+  <InkPage :key="vueRest"
+           class="addBrand-container">
+    <InkCard :key="restKey"
+             class="container">
       <el-form ref="ruleForm"
                :model="ruleForm"
                :rules="rules"
@@ -67,7 +67,7 @@
                            :style="inputStyle" />
                     </div>
                     <span class="delFlavor delBut non"
-                          @click="delFlavor(item.name)">删除</span>
+                          @click="delFlavor(item.name, index)">删除</span>
                   </div>
                 </div>
                 <div v-if="
@@ -117,8 +117,8 @@
           </el-button>
         </div>
       </el-form>
-    </div>
-  </div>
+    </InkCard>
+  </InkPage>
 </template>
 
 <script lang="ts">
@@ -136,12 +136,16 @@ import {
 } from '@/api/dish'
 import { baseUrl } from '@/config.json'
 import { getToken } from '@/utils/cookies'
+import InkPage from '@/components/ink/InkPage.vue'
+import InkCard from '@/components/ink/InkCard.vue'
 @Component({
   name: 'addShop',
   components: {
     HeadLable,
     SelectInput,
-    ImageUpload
+    ImageUpload,
+    InkPage,
+    InkCard
   }
 })
 export default class extends Vue {
@@ -285,8 +289,10 @@ export default class extends Vue {
   }
 
   // 按钮 - 删除口味
-  private delFlavor(name: string) {
-    let ind = this.dishFlavors.findIndex(item => item.name === name)
+  private delFlavor(name: string, index?: number) {
+    let ind = typeof index === 'number'
+      ? index
+      : this.dishFlavors.findIndex(item => item.name === name)
     this.dishFlavors.splice(ind, 1)
   }
 
@@ -443,14 +449,15 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .addBrand {
   &-container {
-    margin: 30px;
+    margin: 24px 30px;
 
     .container {
       position: relative;
       z-index: 1;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
       padding: 30px;
-      border-radius: 4px;
       min-height: 500px;
 
       .subBox {
@@ -471,20 +478,20 @@ export default class extends Vue {
   width: 777px;
 
   .addBut {
-    background: #ffc200;
+    background: linear-gradient(135deg, #2f365a 0%, #3a446f 100%);
     display: inline-block;
     padding: 0px 20px;
     border-radius: 3px;
     line-height: 40px;
     cursor: pointer;
     border-radius: 4px;
-    color: #333333;
+    color: #fff;
     font-weight: 500;
   }
 
   .flavor {
-    border: solid 1px #dfe2e8;
-    border-radius: 3px;
+    border: solid 1px #d9d3c8;
+    border-radius: 10px;
     padding: 15px;
     background: #fafafb;
 
@@ -518,13 +525,13 @@ export default class extends Vue {
           flex-wrap: wrap;
           border-radius: 3px;
           min-height: 39px;
-          border: solid 1px #d8dde3;
+          border: solid 1px #d9d3c8;
           background: #fff;
           padding: 0 5px;
 
           span {
             display: inline-block;
-            color: #ffc200;
+            color: #8b5e3c;
             margin: 5px;
             line-height: 26px;
             padding: 0 10px;
