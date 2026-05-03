@@ -1,12 +1,12 @@
 <template>
-  <div class="addBrand-container">
-    <div class="container">
+  <div class="addBrand-container ink-setmeal-add-page">
+    <div class="container ink-form-card">
       <el-form ref="ruleForm"
                :model="ruleForm"
                :rules="rules"
                :inline="true"
                label-width="180px"
-               class="demo-ruleForm">
+               class="demo-ruleForm ink-setmeal-form">
         <div>
           <el-form-item label="套餐名称:"
                         prop="name">
@@ -37,19 +37,19 @@
           <el-form-item label="套餐菜品:"
                         required>
             <el-form-item>
-              <div class="addDish">
+              <div class="addDish ink-dish-section">
                 <span v-if="dishTable.length == 0"
-                      class="addBut"
+                      class="addBut ink-add-dish-btn"
                       @click="openAddDish('new')">
                   + 添加菜品</span>
                 <div v-if="dishTable.length != 0"
                      class="content">
-                  <div class="addBut"
+                  <div class="addBut ink-add-dish-btn"
                        style="margin-bottom: 20px"
                        @click="openAddDish('change')">
                     + 添加菜品
                   </div>
-                  <div class="table">
+                  <div class="table ink-dish-table-wrap">
                     <el-table :data="dishTable"
                               style="width: 100%">
                       <el-table-column prop="name"
@@ -123,18 +123,21 @@
                       placeholder="套餐描述，最长200字" />
           </el-form-item>
         </div>
-        <div class="subBox address">
+        <div class="subBox address ink-action-bar">
           <el-form-item>
-            <el-button @click="() => $router.back()">
+            <el-button class="ink-cancel-btn"
+                       @click="() => $router.back()">
               取消
             </el-button>
             <el-button type="primary"
+                       class="ink-save-btn"
                        :class="{ continue: actionType === 'add' }"
                        @click="submitForm('ruleForm', false)">
               保存
             </el-button>
             <el-button v-if="actionType == 'add'"
                        type="primary"
+                       class="ink-save-continue-btn"
                        @click="submitForm('ruleForm', true)">
               保存并继续添加
             </el-button>
@@ -144,7 +147,7 @@
     </div>
     <el-dialog v-if="dialogVisible"
                title="添加菜品"
-               class="addDishList"
+               class="addDishList ink-add-dish-dialog"
                :visible.sync="dialogVisible"
                width="60%"
                :before-close="handleClose">
@@ -446,16 +449,22 @@ export default class extends Vue {
 //   top: 90%;
 // }
 .addBrand-container {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(118, 102, 71, 0.05), rgba(118, 102, 71, 0) 28%),
+    linear-gradient(180deg, #fbf8f1 0%, #f5efe5 100%);
+  border-radius: 14px;
+
   .avatar-uploader .el-upload {
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed #ccbda8;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    background: #fffcf6;
   }
 
   .avatar-uploader .el-upload:hover {
-    border-color: #ffc200;
+    border-color: #c99a2e;
   }
 
   .avatar-uploader-icon {
@@ -479,6 +488,12 @@ export default class extends Vue {
 
   .el-input {
     width: 293px;
+  }
+  .el-input__inner,
+  .el-textarea__inner,
+  .el-select .el-input__inner {
+    border-color: #dcccba;
+    background: #fffefb;
   }
 
   .address {
@@ -510,15 +525,20 @@ export default class extends Vue {
     }
 
     .table {
-      border: solid 1px #ebeef5;
-      border-radius: 3px;
+      border: solid 1px #e6dac7;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fffdf8;
 
       th {
         padding: 5px 0;
+        background: #f8f2e7;
+        color: #1f2933;
       }
 
       td {
         padding: 7px 0;
+        background: #fffefb;
       }
     }
   }
@@ -546,6 +566,25 @@ export default class extends Vue {
     }
   }
 }
+
+.ink-cancel-btn {
+  border: 1px solid #d8ccb8;
+  color: #586578;
+  background: #fffdf8;
+}
+
+.ink-save-btn {
+  background: linear-gradient(90deg, #1f3b48 0%, #2f5d50 100%) !important;
+  border-color: #1f3b48 !important;
+  color: #fff !important;
+}
+
+.ink-save-continue-btn,
+.ink-add-dish-btn {
+  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
+  border-color: #c99a2e !important;
+  color: #3d2d11 !important;
+}
 </style>
 <style lang="scss" scoped>
 .addBrand {
@@ -555,15 +594,17 @@ export default class extends Vue {
     .container {
       position: relative;
       z-index: 1;
-      background: #fff;
+      background: #fffdf8;
       padding: 30px;
-      border-radius: 4px;
+      border-radius: 14px;
+      border: 1px solid #e4d8c7;
+      box-shadow: 0 8px 24px rgba(23, 38, 59, 0.08);
       min-height: 500px;
 
       .subBox {
         padding-top: 30px;
         text-align: center;
-        border-top: solid 1px $gray-5;
+        border-top: solid 1px #e9decc;
       }
       .el-input {
         width: 350px;
@@ -572,22 +613,23 @@ export default class extends Vue {
         width: 777px;
 
         .addBut {
-          background: #ffc200;
+          background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%);
           display: inline-block;
           padding: 0px 20px;
           border-radius: 3px;
           line-height: 40px;
           cursor: pointer;
           border-radius: 4px;
-          color: #333333;
+          color: #3d2d11;
           font-weight: 500;
+          border: 1px solid #c99a2e;
         }
 
         .content {
-          background: #fafafb;
+          background: #fffcf6;
           padding: 20px;
-          border: solid 1px #d8dde3;
-          border-radius: 3px;
+          border: solid 1px #e2d6c3;
+          border-radius: 10px;
         }
       }
     }
