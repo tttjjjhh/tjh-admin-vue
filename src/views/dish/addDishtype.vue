@@ -1,14 +1,14 @@
 <template>
   <div :key="vueRest"
-       class="addBrand-container">
+       class="addBrand-container ink-dish-add-page">
     <div :key="restKey"
-         class="container">
+         class="container ink-form-card">
       <el-form ref="ruleForm"
                :model="ruleForm"
                :rules="rules"
                :inline="true"
                label-width="180px"
-               class="demo-ruleForm">
+               class="demo-ruleForm ink-dish-form">
         <div>
           <el-form-item label="菜品名称:"
                         prop="name">
@@ -38,7 +38,7 @@
           <el-form-item>
             <div class="flavorBox">
               <span v-if="dishFlavors.length == 0"
-                    class="addBut"
+                    class="addBut ink-add-flavor-btn"
                     @click="addFlavore">
                 + 添加口味</span>
               <div v-if="dishFlavors.length != 0"
@@ -74,7 +74,7 @@
                        !!this.leftDishFlavors.length &&
                          this.dishFlavors.length < this.dishFlavorsData.length
                      "
-                     class="addBut"
+                     class="addBut ink-add-flavor-btn"
                      @click="addFlavore">
                   添加口味
                 </div>
@@ -101,17 +101,20 @@
                       placeholder="菜品描述，最长200字" />
           </el-form-item>
         </div>
-        <div class="subBox address">
-          <el-button @click="() => $router.back()">
+        <div class="subBox address ink-action-bar">
+          <el-button class="ink-cancel-btn"
+                     @click="() => $router.back()">
             取消
           </el-button>
           <el-button type="primary"
+                     class="ink-save-btn"
                      :class="{ continue: actionType === 'add' }"
                      @click="submitForm('ruleForm')">
             保存
           </el-button>
           <el-button v-if="actionType == 'add'"
                      type="primary"
+                     class="ink-save-continue-btn"
                      @click="submitForm('ruleForm', 'goAnd')">
             保存并继续添加
           </el-button>
@@ -425,6 +428,11 @@ export default class extends Vue {
 </script>
 <style lang="scss" scoped>
 .addBrand-container {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(115, 98, 67, 0.05), rgba(115, 98, 67, 0) 28%),
+    linear-gradient(180deg, #fbf8f1 0%, #f5efe5 100%);
+  border-radius: 14px;
+
   .el-form--inline .el-form-item__content {
     width: 293px;
   }
@@ -448,15 +456,17 @@ export default class extends Vue {
     .container {
       position: relative;
       z-index: 1;
-      background: #fff;
+      background: #fffdf8;
       padding: 30px;
-      border-radius: 4px;
+      border-radius: 14px;
+      border: 1px solid #e4d8c7;
+      box-shadow: 0 8px 24px rgba(23, 38, 59, 0.08);
       min-height: 500px;
 
       .subBox {
         padding-top: 30px;
         text-align: center;
-        border-top: solid 1px $gray-5;
+        border-top: solid 1px #e9decc;
       }
       .upload-item {
         .el-form-item__error {
@@ -471,22 +481,23 @@ export default class extends Vue {
   width: 777px;
 
   .addBut {
-    background: #ffc200;
+    background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%);
     display: inline-block;
     padding: 0px 20px;
     border-radius: 3px;
     line-height: 40px;
     cursor: pointer;
     border-radius: 4px;
-    color: #333333;
+    color: #3d2d11;
     font-weight: 500;
+    border: 1px solid #c99a2e;
   }
 
   .flavor {
-    border: solid 1px #dfe2e8;
-    border-radius: 3px;
+    border: solid 1px #e2d5c2;
+    border-radius: 10px;
     padding: 15px;
-    background: #fafafb;
+    background: #fffcf6;
 
     .title {
       color: #606168;
@@ -518,8 +529,8 @@ export default class extends Vue {
           flex-wrap: wrap;
           border-radius: 3px;
           min-height: 39px;
-          border: solid 1px #d8dde3;
-          background: #fff;
+          border: solid 1px #ddd1bf;
+          background: #fffefb;
           padding: 0 5px;
 
           span {
@@ -551,11 +562,41 @@ export default class extends Vue {
         .delFlavor {
           display: inline-block;
           padding: 0 10px;
-          color: #f19c59;
+          color: #c96c64;
           cursor: pointer;
         }
       }
     }
   }
+}
+
+.ink-cancel-btn {
+  border: 1px solid #d8ccb8;
+  color: #586578;
+  background: #fffdf8;
+}
+
+.ink-save-btn {
+  background: linear-gradient(90deg, #1f3b48 0%, #2f5d50 100%) !important;
+  border-color: #1f3b48 !important;
+  color: #fff !important;
+}
+
+.ink-save-continue-btn {
+  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
+  border-color: #c99a2e !important;
+  color: #3d2d11 !important;
+}
+
+.ink-dish-add-page .el-input__inner,
+.ink-dish-add-page .el-textarea__inner,
+.ink-dish-add-page .el-select .el-input__inner {
+  border-color: #dcccba;
+  background: #fffefb;
+}
+
+.ink-dish-add-page .avatar-uploader .el-upload {
+  border: 1px dashed #cdbda7 !important;
+  background: #fffcf6 !important;
 }
 </style>
