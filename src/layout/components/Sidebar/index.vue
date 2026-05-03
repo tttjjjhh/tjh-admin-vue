@@ -13,7 +13,6 @@
       /> -->
       <div v-if="!isCollapse" class="sidebar-logo">
         <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
-        <p class="brand-slogan">忆流年 · 岁月静好</p>
       </div>
       <div v-else
            class="sidebar-logo-mini">
