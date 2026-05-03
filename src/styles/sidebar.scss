@@ -5,7 +5,7 @@
     width: 100% !important;
 
     .el-menu-item {
-      color: #dbe3ea;
+      color: #4f3f2d;
       height: 42px;
       line-height: 38px;
       padding: 0 0 0 17px !important;
@@ -13,12 +13,12 @@
 
       // border-radius: 0 21px 21px 0 !important;
       &:hover {
-        color: #ffffff !important;
-        background: rgba(238, 228, 210, 0.18) !important;
-        border-radius: 24px;
+        color: #3c2f22 !important;
+        background: rgba(214, 181, 109, 0.2) !important;
+        border-radius: 16px;
 
         span {
-          color: #ffffff !important;
+          color: #3c2f22 !important;
         }
       }
 
@@ -33,13 +33,13 @@
     }
 
     .router-link-active .el-menu-item {
-      background: linear-gradient(90deg, #f8f5ef 0%, #ebe2d3 70%, #e3d5bf 100%) !important;
-      color: #24384f !important;
-      border-radius: 24px !important;
-      box-shadow: inset 0 0 0 1px rgba(187, 156, 109, 0.35);
+      background: linear-gradient(90deg, #f3e6c6 0%, #ead7a8 100%) !important;
+      color: #3d2f1f !important;
+      border-radius: 16px !important;
+      box-shadow: inset 3px 0 0 #c9a24d, inset 0 0 0 1px rgba(187, 156, 109, 0.35);
 
       span {
-        color: #24384f !important;
+        color: #3d2f1f !important;
         font-weight: 500 !important;
       }
     }
@@ -51,25 +51,25 @@
 
   .el-submenu.is-active {
     >.el-submenu__title {
-      color: #f4f4f5 !important;
+      color: #3d2f1f !important;
     }
   }
 
   .el-submenu {
     >.el-submenu__title {
       min-width: 190px !important;
-      background-color: #1d2f4d !important;
+      background-color: #efe2c8 !important;
     }
 
     .el-menu-item {
       min-width: 190px !important;
-      background-color: #1d2f4d !important;
+      background-color: #efe2c8 !important;
     }
   }
 
   .el-menu-item {
     i {
-      color: #e6edf3;
+      color: #5a4632;
       font-size: 20px;
       margin-right: 9px;
     }
@@ -108,7 +108,7 @@
 
   .el-icon-arrow-down {
     &:before {
-      color: #fff;
+      color: #5a4632;
     }
   }
 
@@ -163,7 +163,7 @@
     padding-left: 0 !important;
 
     &:hover {
-      background: rgba(238, 228, 210, 0.18) !important;
+      background: rgba(214, 181, 109, 0.2) !important;
     }
 
     i {
@@ -173,7 +173,7 @@
 
   .sidebar-container .router-link-active .el-menu-item,
   .el-menu-item.is-active {
-    background: linear-gradient(90deg, #f7f5f0 0%, #e8e2d6 100%) !important;
+    background: linear-gradient(90deg, #f3e6c6 0%, #ead7a8 100%) !important;
   }
 
   .sidebar-container .router-link-active .el-menu-item:hover,

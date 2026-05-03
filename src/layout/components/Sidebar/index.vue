@@ -134,26 +134,27 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .logo {
   text-align: center;
-  background-color: #1890FF;
+  background: linear-gradient(180deg, #f8f1e6 0%, #efe2c8 100%);
   padding: 15px 0 0;
   height: 60px;
+  border-bottom: 1px solid rgba(120, 90, 50, 0.2);
   img {
     display: inline-block;
   }
 }
-.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(214,26,42,.35);opacity:.25}
-.sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(0,0,0,.3));}
-.brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(236,224,205,.8)}
+.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(154,116,62,.35);opacity:.25}
+.sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(72,56,35,.2));}
+.brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(96,74,49,.78)}
 .sidebar-logo-mini {
   img { width: 30px; height: 30px; display: block; margin: 0 auto; }
 }
 .el-scrollbar {
   height: 100%;
   position: relative;
-  background: linear-gradient(180deg, #1a232c 0%, #1f3240 55%, #1c2a35 100%);
+  background: linear-gradient(180deg, #f5ebd9 0%, #efe2c8 70%, #f8f1e6 100%);
 }
-.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%);opacity:.2;pointer-events:none}
-.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(214,26,42,.45);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
+.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(56,52,45,.09),rgba(56,52,45,0) 70%);opacity:.25;pointer-events:none}
+.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(154,116,62,.32);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
 
 .el-menu {
   border: none;
