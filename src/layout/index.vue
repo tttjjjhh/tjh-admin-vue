@@ -78,7 +78,7 @@ export default class extends mixins(ResizeMixin) {
   margin-left: $sideBarWidth;
   background: linear-gradient(180deg, #f8f5ef 0%, #f3efe7 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .main-container::before {

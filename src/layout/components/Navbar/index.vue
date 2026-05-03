@@ -307,6 +307,8 @@ export default class extends Vue {
 .navbar {
   height: 60px;
   position: relative;
+  z-index: 2000;
+  overflow: visible;
   background: #EFE4D0;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #D8C7A8;
@@ -611,7 +613,7 @@ export default class extends Vue {
   position: absolute;
   top: 0px;
   left: 0;
-  z-index: 99;
+  z-index: 9999;
   box-shadow: 0 8px 24px rgba(13, 47, 99, 0.18);
   width: 100%;
   border-radius: 4px;
