@@ -1,0 +1,18 @@
+<svg width="920" height="220" viewBox="0 0 920 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111"/>
+      <stop offset="1" stop-color="#444"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="220" fill="#fff"/>
+  <circle cx="108" cy="110" r="84" fill="none" stroke="url(#ink)" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <text x="210" y="112" font-size="76" font-family="KaiTi, STKaiti, serif" fill="#111" font-weight="700">忆流年外卖</text>
+  <line x1="210" y1="150" x2="300" y2="150" stroke="#666" stroke-width="1"/>
+  <line x1="620" y1="150" x2="710" y2="150" stroke="#666" stroke-width="1"/>
+  <text x="315" y="158" font-size="26" letter-spacing="5" font-family="Times New Roman, serif" fill="#444">TIMELESS GASTRONOMY</text>
+  <rect x="150" y="70" rx="6" ry="6" width="24" height="48" fill="none" stroke="#C00" stroke-width="2"/>
+  <text x="155" y="87" font-size="12" font-family="KaiTi, serif" fill="#C00">忆</text>
+  <text x="155" y="101" font-size="12" font-family="KaiTi, serif" fill="#C00">流</text>
+  <text x="155" y="115" font-size="12" font-family="KaiTi, serif" fill="#C00">年</text>
+</svg>

@@ -5,12 +5,7 @@
       <div class="login-form">
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">
-            <img
-              src="@/assets/login/icon_logo.png"
-              style="width: 149px; height: 38px"
-              alt=""
-            />
-            <!-- <span class="title-label">苍穹外卖</span> -->
+            <img src="@/assets/login/yiliunian-logo.svg" alt="忆流年外卖 logo" />
           </div>
           <el-form-item prop="username">
             <el-input
@@ -125,14 +120,15 @@ export default class extends Vue {
   align-items: center;
   height: 100%;
   // background: #476dbe;
-  background-color: #333;
+  background: radial-gradient(circle at 20% 15%, #8acbff 0%, #2e86e6 42%, #0d2f63 100%);
 }
 
 .login-box {
   width: 1000px;
   height: 474.38px;
-  border-radius: 8px;
+  border-radius: 14px;
   display: flex;
+  box-shadow: 0 18px 46px rgba(9, 42, 92, 0.35);
   img {
     width: 60%;
     height: auto;
@@ -152,6 +148,7 @@ export default class extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 14px;
   .el-form {
     width: 214px;
     height: 307px;
@@ -204,27 +201,22 @@ export default class extends Vue {
   font-size: 12px;
   border: 0;
   font-weight: 500;
-  color: #333333;
+  color: #ffffff;
   // background: #09a57a;
-  background-color: #ffc200;
+  background-color: #1890ff;
   &:hover,
   &:focus {
     // background: #09a57a;
-    background-color: #ffc200;
+    background-color: #1890ff;
     color: #ffffff;
   }
 }
 .login-form-title {
-  height: 36px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
-  .title-label {
-    font-weight: 500;
-    font-size: 20px;
-    color: #333333;
-    margin-left: 10px;
-  }
+  margin-bottom: 18px;
+  img { width: 270px; max-width: 100%; height: auto; }
 }
 </style>

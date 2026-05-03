@@ -1,0 +1,180 @@
+:root {
+  --ink-bg-paper: #f8f5ef;
+  --ink-bg-rice: #f3efe7;
+  --ink-bg-warm-gray: #ece7de;
+  --ink-text-main: #1f2329;
+  --ink-text-strong: #15191f;
+  --ink-text-secondary: #5f6773;
+  --ink-nav-deep: #1b2a35;
+  --ink-nav-mid: #223643;
+  --ink-nav-indigo: #1f3447;
+  --ink-primary: #2f4858;
+  --ink-primary-hover: #3c5d71;
+  --ink-gold: #b08a4d;
+  --ink-gold-soft: #c8a96d;
+  --ink-cinnabar: #c53b2c;
+  --ink-border: #ded7ca;
+  --ink-card: rgba(255, 255, 255, 0.88);
+  --ink-shadow: 0 8px 24px rgba(35, 41, 49, 0.08);
+  --ink-radius-md: 10px;
+  --ink-radius-lg: 14px;
+}
+
+body {
+  color: var(--ink-text-main);
+  background: linear-gradient(180deg, var(--ink-bg-paper) 0%, var(--ink-bg-rice) 100%);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.025) 0.9px, transparent 0.9px),
+    linear-gradient(180deg, var(--ink-bg-paper) 0%, var(--ink-bg-rice) 100%);
+  background-size: 4px 4px, 100% 100%;
+}
+
+#app {
+  background: transparent;
+}
+
+.main-container {
+  background: transparent !important;
+}
+
+.app-main {
+  position: relative;
+}
+
+.app-main::before {
+  content: '';
+  position: absolute;
+  inset: 8px 12px auto;
+  height: 90px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(120, 125, 132, 0.12), rgba(120, 125, 132, 0));
+  clip-path: polygon(0 80%, 12% 55%, 24% 74%, 38% 50%, 52% 68%, 68% 45%, 82% 62%, 100% 50%, 100% 100%, 0 100%);
+  opacity: 0.25;
+}
+
+.app-container,
+.container {
+  border-radius: var(--ink-radius-lg);
+}
+
+.container {
+  background: var(--ink-card);
+  border: 1px solid var(--ink-border);
+  box-shadow: var(--ink-shadow);
+}
+
+.homeTitle {
+  color: var(--ink-text-strong);
+  font-family: 'STKaiti', 'KaiTi', 'Songti SC', serif;
+}
+
+.homeTitle::after {
+  content: ' ~';
+  color: var(--ink-gold-soft);
+  font-weight: 400;
+}
+
+.el-card,
+.el-dialog,
+.el-popover,
+.el-message-box {
+  border: 1px solid var(--ink-border);
+  box-shadow: var(--ink-shadow);
+  border-radius: var(--ink-radius-md);
+}
+
+.el-button--primary {
+  background: linear-gradient(90deg, var(--ink-primary) 0%, #3a596d 100%);
+  border-color: var(--ink-primary);
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background: linear-gradient(90deg, var(--ink-primary-hover) 0%, #4a6d85 100%);
+  border-color: var(--ink-primary-hover);
+}
+
+.el-button--default {
+  border-color: var(--ink-border);
+  color: var(--ink-text-main);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.el-input__inner,
+.el-textarea__inner,
+.el-select .el-input__inner {
+  border-color: var(--ink-border);
+  border-radius: 8px;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: var(--ink-primary);
+  box-shadow: 0 0 0 2px rgba(47, 72, 88, 0.12);
+}
+
+.el-table {
+  color: var(--ink-text-main);
+}
+
+.el-table th {
+  background: #f6f2ea;
+  color: var(--ink-text-strong);
+}
+
+.el-table td,
+.el-table th {
+  border-bottom: 1px solid #ebe4d8;
+  padding: 10px 0;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background: #f7f2e8;
+}
+
+.el-tabs--card > .el-tabs__header .el-tabs__item {
+  border: 1px solid var(--ink-border);
+  border-radius: 999px;
+  margin-right: 8px;
+  color: var(--ink-text-secondary);
+  background: #f8f5ef;
+}
+
+.el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
+  color: #fff;
+  border-color: var(--ink-primary);
+  background: var(--ink-primary);
+}
+
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .el-pager li {
+  background: #fff;
+  border: 1px solid var(--ink-border);
+  color: var(--ink-text-secondary);
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: #fff;
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-text-secondary);
+}
+
+.status-dot::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-primary);
+}
+
+.status-dot.warn::before { background: var(--ink-gold); }
+.status-dot.error::before { background: var(--ink-cinnabar); }
+.status-dot.success::before { background: #2f8a57; }
