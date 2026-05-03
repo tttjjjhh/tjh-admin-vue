@@ -22,7 +22,30 @@
                hidden>
           <source src="./../../../assets/reminder.mp3" type="audio/mp3" />
         </audio>
-        <span class="navicon operatingState" @click="handleStatus"><i />营业状态设置</span>
+        <el-popover
+          v-model="dialogVisible"
+          placement="bottom-end"
+          width="320"
+          trigger="manual"
+          popper-class="business-status-popover"
+          :append-to-body="true"
+        >
+          <el-radio-group v-model="setStatus">
+            <el-radio :label="1">
+              营业中
+              <span>当前餐厅处于营业状态，自动接收任何订单，可点击打烊进入店铺打烊状态。</span>
+            </el-radio>
+            <el-radio :label="0">
+              打烊中
+              <span>当前餐厅处于打烊状态，仅接受营业时间内的预定订单，可点击营业中手动恢复营业状态。</span>
+            </el-radio>
+          </el-radio-group>
+          <div class="status-popover-footer">
+            <el-button @click="dialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="handleSave">确 定</el-button>
+          </div>
+          <span slot="reference" class="navicon operatingState" @click="handleStatus"><i />营业状态设置</span>
+        </el-popover>
       </div>
       <div class="avatar-wrapper">
         <div :class="shopShow?'userInfo':''"
@@ -46,29 +69,6 @@
         </div>
       </div>
     </div>
-    <!-- 营业状态弹层 -->
-    <el-dialog title="营业状态设置"
-               :visible.sync="dialogVisible"
-               width="25%"
-               :show-close="false">
-      <el-radio-group v-model="setStatus">
-        <el-radio :label="1">
-          营业中
-          <span>当前餐厅处于营业状态，自动接收任何订单，可点击打烊进入店铺打烊状态。</span>
-        </el-radio>
-        <el-radio :label="0">
-          打烊中
-          <span>当前餐厅处于打烊状态，仅接受营业时间内的预定订单，可点击营业中手动恢复营业状态。</span>
-        </el-radio>
-      </el-radio-group>
-      <span slot="footer"
-            class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary"
-                   @click="handleSave">确 定</el-button>
-      </span>
-    </el-dialog>
-    <!-- end -->
     <!-- 修改密码 -->
     <Password :dialog-form-visible="dialogFormVisible"
               @handleclose="handlePwdClose" />
@@ -653,6 +653,44 @@ export default class extends Vue {
 .msgTip {
   color: #419eff;
   padding: 0 5px;
+}
+
+.business-status-popover {
+  z-index: 9999 !important;
+  margin-top: 8px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(165, 130, 80, 0.2) !important;
+  background: #fffdf8 !important;
+  box-shadow: 0 12px 28px rgba(70, 50, 20, 0.12) !important;
+  .el-radio-group {
+    width: 100%;
+  }
+  .el-radio {
+    width: 100%;
+    white-space: normal;
+    background: #fffaf2;
+    border: 1px solid #e2d3b8;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 10px 0 0;
+  }
+  .el-radio__label {
+    color: #2f2a24;
+    font-weight: 600;
+    span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 400;
+      color: #6f6254;
+      line-height: 18px;
+    }
+  }
+  .status-popover-footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
 }
 // .el-dropdown{
 //   .el-button--primary{
