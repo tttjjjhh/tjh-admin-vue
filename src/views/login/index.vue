@@ -5,12 +5,11 @@
       <div class="login-form">
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">
-            <img
-              src="@/assets/login/icon_logo.png"
-              style="width: 149px; height: 38px"
-              alt=""
-            />
-            <!-- <span class="title-label">苍穹外卖</span> -->
+            <div class="title-seal">忆</div>
+            <div class="title-main">
+              <h2>忆流年外卖</h2>
+              <p>TIMeless Gastronomy</p>
+            </div>
           </div>
           <el-form-item prop="username">
             <el-input
@@ -125,7 +124,7 @@ export default class extends Vue {
   align-items: center;
   height: 100%;
   // background: #476dbe;
-  background-color: #333;
+  background: radial-gradient(circle at 20% 20%, #69c0ff 0%, #1890ff 42%, #0f2d66 100%);
 }
 
 .login-box {
@@ -206,18 +205,23 @@ export default class extends Vue {
   font-weight: 500;
   color: #333333;
   // background: #09a57a;
-  background-color: #ffc200;
+  background-color: #1890ff;
   &:hover,
   &:focus {
     // background: #09a57a;
-    background-color: #ffc200;
+    background-color: #1890ff;
     color: #ffffff;
   }
 }
 .login-form-title {
-  height: 36px;
+  height: 52px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  .title-seal{width:38px;height:38px;border:2px solid #1890ff;color:#1890ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin-right:10px;}
+  .title-main h2{margin:0;color:#0f4da8;font-size:24px;line-height:1;font-family:"STKaiti","KaiTi",serif;}
+  .title-main p{margin:3px 0 0;color:#6c7da0;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
   align-items: center;
   margin-bottom: 40px;
   .title-label {
