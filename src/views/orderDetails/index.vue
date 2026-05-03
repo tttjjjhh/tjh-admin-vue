@@ -33,7 +33,7 @@
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
-          style="width: 500px"
+          style="width: 320px !important;flex-shrink: 0;"
           @clear="init(orderStatus)"
         /></div>
         <template #actions><el-button class="normal-btn continue" @click="init(orderStatus, true)">查询</el-button></template>
@@ -859,6 +859,9 @@ export default class extends Vue {
   .pageList { margin-top: 18px; text-align: right !important; }
   ::v-deep .el-button--text.blueBug { color: #3e596f !important; }
   ::v-deep .el-button--text.delBut { color: #c53b2c !important; }
+  ::v-deep .el-date-editor--daterange.el-input__inner {
+    width: 520px !important;
+  }
 }
 
 .dashboard {
@@ -1197,7 +1200,7 @@ export default class extends Vue {
       max-width: calc(100% - 30px);
     }
     .el-dialog__body {
-      height: 520px !important;
+      height: 320px !important;
     }
   }
 }
