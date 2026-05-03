@@ -1,14 +1,11 @@
 <template>
-  <div class="dashboard-container">
-    <TabChange
-      :order-statics="orderStatics"
-      :default-activity="defaultActivity"
-      @tabChange="change"
-    />
-    <div class="container" :class="{ hContainer: tableData.length }">
-      <!-- 搜索项 -->
-      <div class="tableBar">
-        <label style="margin-right: 10px">订单号：</label>
+  <InkPage class="dashboard-container">
+    <InkCard class="order-tabs-card">
+      <InkTabs v-model="orderStatus" :options="orderTabOptions" @input="change" />
+    </InkCard>
+    <InkTableWrapper :class="{ hContainer: tableData.length }">
+      <InkFilterBar class="tableBar">
+        <div><label style="margin-right: 10px">订单号：</label>
         <el-input
           v-model="input"
           placeholder="请填写订单号"
@@ -16,8 +13,8 @@
           clearable
           @clear="init(orderStatus)"
           @keyup.enter.native="initFun(orderStatus)"
-        />
-        <label style="margin-left: 20px">手机号：</label>
+        /></div>
+        <div><label style="margin-left: 20px">手机号：</label>
         <el-input
           v-model="phone"
           placeholder="请填写手机号"
@@ -25,8 +22,8 @@
           clearable
           @clear="init(orderStatus)"
           @keyup.enter.native="initFun(orderStatus)"
-        />
-        <label style="margin-left: 20px">下单时间：</label>
+        /></div>
+        <div><label style="margin-left: 20px">下单时间：</label>
         <el-date-picker
           v-model="valueTime"
           clearable
@@ -38,11 +35,9 @@
           end-placeholder="结束日期"
           style="width: 25%; margin-left: 10px"
           @clear="init(orderStatus)"
-        />
-        <el-button class="normal-btn continue" @click="init(orderStatus, true)">
-          查询
-        </el-button>
-      </div>
+        /></div>
+        <template #actions><el-button class="normal-btn continue" @click="init(orderStatus, true)">查询</el-button></template>
+      </InkFilterBar>
       <el-table
         v-if="tableData.length"
         :data="tableData"
@@ -221,6 +216,7 @@
         </el-table-column>
       </el-table>
       <Empty v-else :is-search="isSearch" />
+      <template #pagination>
       <el-pagination
         v-if="counts > 10"
         class="pageList"
@@ -231,7 +227,8 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
       />
-    </div>
+      </template>
+    </InkTableWrapper>
 
     <!-- 查看弹框部分 -->
     <el-dialog
@@ -469,15 +466,15 @@
         <el-button type="primary" @click="confirmCancel">确 定</el-button>
       </span>
     </el-dialog>
-  </div>
+  </InkPage>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import HeadLable from '@/components/HeadLable/index.vue'
 import InputAutoComplete from '@/components/InputAutoComplete/index.vue'
-import TabChange from './tabChange.vue'
 import Empty from '@/components/Empty/index.vue'
+import { InkPage, InkCard, InkFilterBar, InkTabs, InkTableWrapper } from '@/components/ink'
 import {
   getOrderDetailPage,
   queryOrderDetailById,
@@ -493,8 +490,12 @@ import {
   components: {
     HeadLable,
     InputAutoComplete,
-    TabChange,
     Empty,
+    InkPage,
+    InkCard,
+    InkFilterBar,
+    InkTabs,
+    InkTableWrapper,
   },
 })
 export default class extends Vue {
@@ -592,6 +593,19 @@ export default class extends Vue {
       value: 6,
     },
   ]
+
+
+  get orderTabOptions() {
+    const s: any = this.orderStatics || {}
+    return [
+      { label: `全部订单(${s.allOrders || 0})`, value: 0 },
+      { label: `待接单(${s.waitingOrders || 0})`, value: 2 },
+      { label: `待派送(${s.deliveredOrders || 0})`, value: 3 },
+      { label: `派送中(${s.confirmedOrders || 0})`, value: 4 },
+      { label: `已完成(${s.completedOrders || 0})`, value: 5 },
+      { label: `已取消(${s.cancelledOrders || 0})`, value: 6 },
+    ]
+  }
 
   created() {
     this.init(Number(this.$route.query.status) || 0)
@@ -831,6 +845,20 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.dashboard-container {
+  .order-tabs-card { margin-bottom: 12px; }
+  .tableBar { margin-bottom: 10px; }
+  .tableBox { border-radius: 10px; overflow: hidden; }
+  .tableBox ::v-deep th { background: #f7f2e9; color: #293340; }
+  .tableBox ::v-deep td { height: 54px; }
+  .tableBox ::v-deep .el-table__body tr:hover > td { background: #f8f4eb !important; }
+  .normal-btn { margin-left: 0 !important; min-width: 92px; }
+  .normal-btn.continue { background: linear-gradient(90deg, #2f4858, #3c5d71) !important; color: #fff; border-radius: 20px; }
+  .pageList { margin-top: 18px; text-align: right !important; }
+  ::v-deep .el-button--text.blueBug { color: #3e596f !important; }
+  ::v-deep .el-button--text.delBut { color: #c53b2c !important; }
+}
+
 .dashboard {
   &-container {
     margin: 30px;
