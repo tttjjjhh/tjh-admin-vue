@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <h2 class="homeTitle">
+  <div class="container ink-panel ink-panel-orderview">
+    <h2 class="homeTitle ink-panel-title">
       订单管理<i>{{ days[1] }}</i
       ><span><router-link to="/order">订单明细</router-link></span>
     </h2>
-    <div class="orderviewBox">
+    <div class="orderviewBox ink-data-list">
       <ul>
         <li>
           <span class="status"
