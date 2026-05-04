@@ -1,24 +1,34 @@
 <template>
-  <div class="dashboard-container home">
+  <div class="dashboard-container home ink-home-page">
     <!-- 营业数据 -->
-    <Overview :overviewData="overviewData" />
+    <div class="ink-home-module ink-home-module--overview">
+      <Overview :overviewData="overviewData" />
+    </div>
     <!-- end -->
     <!-- 订单管理 -->
-    <Orderview :orderviewData="orderviewData" />
+    <div class="ink-home-module ink-home-module--order">
+      <Orderview :orderviewData="orderviewData" />
+    </div>
     <!-- end -->
-    <div class="homeMain">
+    <div class="homeMain ink-home-grid">
       <!-- 菜品总览 -->
-      <CuisineStatistics :dishesData="dishesData" />
+      <div class="ink-home-module ink-home-module--dish">
+        <CuisineStatistics :dishesData="dishesData" />
+      </div>
       <!-- end -->
       <!-- 套餐总览 -->
-      <SetMealStatistics :setMealData="setMealData" />
+      <div class="ink-home-module ink-home-module--setmeal">
+        <SetMealStatistics :setMealData="setMealData" />
+      </div>
       <!-- end -->
     </div>
     <!-- 订单信息 -->
-    <OrderList
-      :order-statics="orderStatics"
-      @getOrderListBy3Status="getOrderListBy3Status"
-    />
+    <div class="ink-home-module ink-home-module--order-list">
+      <OrderList
+        :order-statics="orderStatics"
+        @getOrderListBy3Status="getOrderListBy3Status"
+      />
+    </div>
     <!-- end -->
   </div>
 </template>

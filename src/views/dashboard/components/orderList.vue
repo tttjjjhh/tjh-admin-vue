@@ -163,7 +163,9 @@
             </el-table-column>
           </el-table>
         </div>
-        <Empty v-else :is-search="isSearch" />
+        <div v-else class="ink-empty-wrap">
+          <Empty :is-search="isSearch" />
+        </div>
         <el-pagination
           v-if="counts > 10"
           class="pageList"
