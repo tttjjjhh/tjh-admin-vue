@@ -10,6 +10,12 @@
   --ink-gold-light: #D2B272;
   --ink-green: #2f5d50;
   --ink-red: #B85C38;
+  --ink-tea-gold: #B9852F;
+  --ink-tea-gold-hover: #A87424;
+  --ink-tea-gold-active: #8F5F1B;
+  --ink-soft-gold-bg: #F3E2BE;
+  --ink-soft-gold-border: #D6B16A;
+  --ink-soft-gold-text: #6B4518;
   --ink-shadow: 0 8px 24px rgba(23, 38, 59, 0.08);
   --ink-radius-md: 10px;
   --ink-radius-lg: 14px;
@@ -99,9 +105,44 @@ body {
 
 .el-button--warning,
 .btn-add {
-  color: #1F2A24 !important;
-  background: linear-gradient(135deg, #D2B272 0%, #C9A45C 100%);
-  border-color: var(--ink-gold);
+  color: #fff !important;
+  background: var(--ink-tea-gold);
+  border-color: var(--ink-tea-gold);
+  box-shadow: 0 3px 8px rgba(185, 133, 47, 0.22);
+}
+
+.el-button--warning:hover,
+.el-button--warning:focus,
+.btn-add:hover,
+.btn-add:focus {
+  color: #fff !important;
+  background: var(--ink-tea-gold-hover);
+  border-color: var(--ink-tea-gold-hover);
+}
+
+.el-button--warning:active,
+.btn-add:active {
+  color: #fff !important;
+  background: var(--ink-tea-gold-active);
+  border-color: var(--ink-tea-gold-active);
+}
+
+.el-radio-button__inner {
+  background: #fffdf8;
+  border-color: #E4D6BF;
+  color: #5F4A32;
+}
+
+.el-radio-button__inner:hover {
+  color: var(--ink-soft-gold-text);
+}
+
+.el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  background: var(--ink-soft-gold-bg);
+  border-color: var(--ink-soft-gold-border);
+  color: var(--ink-soft-gold-text);
+  box-shadow: -1px 0 0 0 var(--ink-soft-gold-border);
+  font-weight: 600;
 }
 
 .el-button--danger {
@@ -239,9 +280,30 @@ body {
 .ink-save-continue-btn,
 .ink-add-flavor-btn,
 .ink-add-dish-btn {
-  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
-  border-color: #c99a2e !important;
-  color: #3d2d11 !important;
+  background: var(--ink-tea-gold) !important;
+  border-color: var(--ink-tea-gold) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(185, 133, 47, 0.22);
+}
+
+.ink-create-btn:hover,
+.ink-save-continue-btn:hover,
+.ink-add-flavor-btn:hover,
+.ink-add-dish-btn:hover,
+.ink-create-btn:focus,
+.ink-save-continue-btn:focus,
+.ink-add-flavor-btn:focus,
+.ink-add-dish-btn:focus {
+  background: var(--ink-tea-gold-hover) !important;
+  border-color: var(--ink-tea-gold-hover) !important;
+}
+
+.ink-create-btn:active,
+.ink-save-continue-btn:active,
+.ink-add-flavor-btn:active,
+.ink-add-dish-btn:active {
+  background: var(--ink-tea-gold-active) !important;
+  border-color: var(--ink-tea-gold-active) !important;
 }
 
 .dashboard-container .tableLab > span,

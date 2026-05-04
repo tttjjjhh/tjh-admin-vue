@@ -583,9 +583,21 @@ export default class extends Vue {
 }
 
 .ink-save-continue-btn {
-  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
-  border-color: #c99a2e !important;
-  color: #3d2d11 !important;
+  background: #B9852F !important;
+  border-color: #B9852F !important;
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(185, 133, 47, 0.22);
+}
+
+.ink-save-continue-btn:hover,
+.ink-save-continue-btn:focus {
+  background: #A87424 !important;
+  border-color: #A87424 !important;
+}
+
+.ink-save-continue-btn:active {
+  background: #8F5F1B !important;
+  border-color: #8F5F1B !important;
 }
 
 .ink-dish-add-page .el-input__inner,

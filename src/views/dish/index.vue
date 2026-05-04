@@ -403,9 +403,21 @@ export default class extends Vue {
       }
 
       .ink-create-btn {
-        background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%);
-        border-color: #c99a2e;
-        color: #3d2d11;
+        background: #B9852F;
+        border-color: #B9852F;
+        color: #fff;
+        box-shadow: 0 3px 8px rgba(185, 133, 47, 0.22);
+      }
+
+      .ink-create-btn:hover,
+      .ink-create-btn:focus {
+        background: #A87424;
+        border-color: #A87424;
+      }
+
+      .ink-create-btn:active {
+        background: #8F5F1B;
+        border-color: #8F5F1B;
       }
 
       .ink-op-edit {
