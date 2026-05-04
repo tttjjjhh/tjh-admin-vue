@@ -149,6 +149,7 @@
                title="添加菜品"
                class="addDishList ink-add-dish-dialog"
                :visible.sync="dialogVisible"
+               :modal="false"
                width="60%"
                :before-close="handleClose">
       <el-input v-model="value"
