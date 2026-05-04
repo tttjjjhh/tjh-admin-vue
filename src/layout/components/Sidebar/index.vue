@@ -134,30 +134,28 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .logo {
   text-align: center;
-  background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(165,130,80,0.18);
+  background: rgba(12, 19, 26, 0.56);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
-  padding: 15px 0 0;
-  height: 60px;
-  border-bottom: 1px solid rgba(165,130,80,0.18);
-  img {
-    display: inline-block;
-  }
+  padding: 13px 0 0;
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  img { display: inline-block; }
 }
-.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(154,116,62,.35);opacity:.25}
-.sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 1px rgba(72,56,35,.2));}
-.brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(96,74,49,.78)}
+.logo::after{content:'';position:absolute;right:8px;bottom:5px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.14);opacity:.18}
+.sidebar-logo img{width:170px;height:38px;object-fit:contain;display:block;filter: drop-shadow(0 1px 2px rgba(5,8,10,.45));}
+.brand-slogan{margin:1px 0 0 4px;font-size:10px;letter-spacing:1.4px;color:rgba(236,240,245,.86)}
 .sidebar-logo-mini {
   img { width: 30px; height: 30px; display: block; margin: 0 auto; }
 }
 .el-scrollbar {
   height: 100%;
   position: relative;
-  background: #E8D8BC;
-  border-right: 1px solid rgba(165,130,80,0.18);
+  background: transparent;
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
-.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(56,52,45,.10),rgba(56,52,45,0) 70%);opacity:.12;pointer-events:none}
-.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(185,139,66,.35);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
+.el-scrollbar::before{content:'';position:absolute;left:-20px;bottom:70px;width:150px;height:150px;background:radial-gradient(circle,rgba(201,215,230,.12),rgba(56,52,45,0) 70%);opacity:.2;pointer-events:none}
+.el-scrollbar::after{content:'忆';position:absolute;left:20px;bottom:16px;color:rgba(233,239,245,.26);font-size:24px;font-family:'STKaiti','KaiTi',serif;pointer-events:none}
 
 .el-menu {
   border: none;
