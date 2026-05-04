@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
-    <h2 class="homeTitle">
+  <div class="container ink-panel ink-panel-cuisine">
+    <h2 class="homeTitle ink-panel-title">
       菜品总览<span><router-link to="dish">菜品管理</router-link></span>
     </h2>
-    <div class="orderviewBox">
+    <div class="orderviewBox ink-data-list">
       <ul>
         <li>
           <span class="status"><i class="iconfont icon-open"></i>已启售</span>
@@ -13,7 +13,7 @@
           <span class="status"><i class="iconfont icon-stop"></i>已停售</span>
           <span class="num">{{ dishesData.discontinued }}</span>
         </li>
-        <li class="add">
+        <li class="add ink-action-entry">
           <router-link to="/dish/add">
             <i></i>
             <p>新增菜品</p>

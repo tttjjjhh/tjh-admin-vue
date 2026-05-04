@@ -1,31 +1,26 @@
 :root {
-  --ink-bg-paper: #f8f5ef;
-  --ink-bg-rice: #f3efe7;
-  --ink-bg-warm-gray: #ece7de;
-  --ink-text-main: #1f2329;
-  --ink-text-strong: #15191f;
-  --ink-text-secondary: #5f6773;
-  --ink-nav-deep: #1b2a35;
-  --ink-nav-mid: #223643;
-  --ink-nav-indigo: #1f3447;
-  --ink-primary: #2f4858;
-  --ink-primary-hover: #3c5d71;
-  --ink-gold: #b08a4d;
-  --ink-gold-soft: #c8a96d;
-  --ink-cinnabar: #c53b2c;
-  --ink-border: #ded7ca;
-  --ink-card: rgba(255, 255, 255, 0.88);
-  --ink-shadow: 0 8px 24px rgba(35, 41, 49, 0.08);
+  --ink-bg: #F6F1E7;
+  --ink-paper: #FFFCF6;
+  --ink-sidebar: #243847;
+  --ink-sidebar-dark: #1f3140;
+  --ink-text: #1F2A24;
+  --ink-sub-text: #7A6A58;
+  --ink-border: #D8C7A8;
+  --ink-gold: #C9A45C;
+  --ink-gold-light: #D2B272;
+  --ink-green: #2f5d50;
+  --ink-red: #B85C38;
+  --ink-shadow: 0 8px 24px rgba(23, 38, 59, 0.08);
   --ink-radius-md: 10px;
   --ink-radius-lg: 14px;
 }
 
 body {
-  color: var(--ink-text-main);
-  background: linear-gradient(180deg, var(--ink-bg-paper) 0%, var(--ink-bg-rice) 100%);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.025) 0.9px, transparent 0.9px),
-    linear-gradient(180deg, var(--ink-bg-paper) 0%, var(--ink-bg-rice) 100%);
-  background-size: 4px 4px, 100% 100%;
+  color: var(--ink-text);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(170, 145, 102, 0.06) 0, rgba(170, 145, 102, 0) 30%),
+    radial-gradient(circle at 78% 20%, rgba(111, 78, 55, 0.04) 0, rgba(111, 78, 55, 0) 28%),
+    linear-gradient(180deg, var(--ink-bg) 0%, #f3ecdf 100%);
 }
 
 #app {
@@ -57,124 +52,235 @@ body {
 }
 
 .container {
-  background: var(--ink-card);
-  border: 1px solid var(--ink-border);
-  box-shadow: var(--ink-shadow);
+  background: #FFFCF6;
+  border: 1px solid #D8C7A8;
+  box-shadow: 0 8px 24px rgba(111,78,55,0.08);
+  border-radius: 16px;
 }
 
 .homeTitle {
-  color: var(--ink-text-strong);
+  color: #1f2a33;
   font-family: 'STKaiti', 'KaiTi', 'Songti SC', serif;
 }
 
 .homeTitle::after {
   content: ' ~';
-  color: var(--ink-gold-soft);
+  color: #C9A45C;
   font-weight: 400;
 }
 
 .el-card,
 .el-dialog,
 .el-popover,
-.el-message-box {
+.el-message-box,
+.el-upload {
+  background: var(--ink-paper);
   border: 1px solid var(--ink-border);
   box-shadow: var(--ink-shadow);
   border-radius: var(--ink-radius-md);
 }
 
+.el-button {
+  border-radius: 8px;
+  transition: all .2s ease;
+}
+
 .el-button--primary {
-  background: linear-gradient(90deg, var(--ink-primary) 0%, #3a596d 100%);
-  border-color: var(--ink-primary);
+  color: #fff;
+  background: #6F4E37;
+  border-color: #6F4E37;
 }
 
 .el-button--primary:hover,
 .el-button--primary:focus {
-  background: linear-gradient(90deg, var(--ink-primary-hover) 0%, #4a6d85 100%);
-  border-color: var(--ink-primary-hover);
+  background: #5A3F2C;
+  border-color: #5A3F2C;
+}
+
+.el-button--warning,
+.btn-add {
+  color: #1F2A24 !important;
+  background: linear-gradient(135deg, #D2B272 0%, #C9A45C 100%);
+  border-color: var(--ink-gold);
+}
+
+.el-button--danger {
+  color: #fff;
+  background: linear-gradient(90deg, #c2564e 0%, var(--ink-red) 100%);
+  border-color: #c2564e;
 }
 
 .el-button--default {
   border-color: var(--ink-border);
-  color: var(--ink-text-main);
-  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink-text);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .el-input__inner,
 .el-textarea__inner,
 .el-select .el-input__inner {
   border-color: var(--ink-border);
+  background: #FFFCF6;
   border-radius: 8px;
 }
 
 .el-input__inner:focus,
 .el-textarea__inner:focus,
 .el-select .el-input.is-focus .el-input__inner {
-  border-color: var(--ink-primary);
-  box-shadow: 0 0 0 2px rgba(47, 72, 88, 0.12);
+  border-color: #d8a93a;
+  box-shadow: 0 0 0 2px rgba(201,164,92,0.18);
 }
 
 .el-table {
-  color: var(--ink-text-main);
+  color: var(--ink-text);
+  border: 1px solid #ecdfcc;
 }
 
 .el-table th {
-  background: #f6f2ea;
-  color: var(--ink-text-strong);
+  background: #F0E3CC;
+  color: var(--ink-text);
 }
 
 .el-table td,
 .el-table th {
-  border-bottom: 1px solid #ebe4d8;
+  border-bottom: 1px solid #D8C7A8;
   padding: 10px 0;
 }
 
 .el-table--enable-row-hover .el-table__body tr:hover > td {
-  background: #f7f2e8;
+  background: #FFF7E8;
 }
 
-.el-tabs--card > .el-tabs__header .el-tabs__item {
-  border: 1px solid var(--ink-border);
-  border-radius: 999px;
-  margin-right: 8px;
-  color: var(--ink-text-secondary);
-  background: #f8f5ef;
+.el-dialog {
+  background: var(--ink-paper);
+  border-radius: 14px;
 }
 
-.el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
-  color: #fff;
-  border-color: var(--ink-primary);
-  background: var(--ink-primary);
+.el-dialog__title {
+  font-weight: 700;
+  color: var(--ink-text);
 }
 
-.el-pagination.is-background .btn-next,
-.el-pagination.is-background .btn-prev,
-.el-pagination.is-background .el-pager li {
-  background: #fff;
-  border: 1px solid var(--ink-border);
-  color: var(--ink-text-secondary);
+.el-upload,
+.el-upload-dragger {
+  border-color: #d8ccb8 !important;
+  background: #fffcf6;
 }
 
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-  background: var(--ink-primary);
-  border-color: var(--ink-primary);
-  color: #fff;
+.sidebar-container,
+.sidebar-container .el-menu,
+.sidebar-container .el-submenu > .el-submenu__title,
+.sidebar-container .el-submenu .el-menu-item {
+  background: linear-gradient(180deg, #f7ebd6 0%, #efe0c3 100%) !important;
 }
 
-.status-dot {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ink-text-secondary);
+.navbar {
+  background: rgba(255, 251, 243, 0.95) !important;
+  border-bottom: 1px solid rgba(165,130,80,0.18);
+  box-shadow: 0 2px 10px rgba(80, 60, 30, 0.06);
 }
 
-.status-dot::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ink-primary);
+.navbar .businessBtn {
+  background: linear-gradient(90deg, #bf5b55 0%, #d66b5f 100%) !important;
+  border: 1px solid rgba(255, 238, 216, 0.85) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 10px rgba(87, 32, 28, 0.25);
 }
 
-.status-dot.warn::before { background: var(--ink-gold); }
-.status-dot.error::before { background: var(--ink-cinnabar); }
-.status-dot.success::before { background: #2f8a57; }
+/* ===== New Chinese ink visual refresh (style-only, no logic changes) ===== */
+.dashboard-container,
+.addBrand-container,
+.dashboard-container.home,
+.dashboard-container.dish-ink-page,
+.addBrand-container.ink-dish-add-page,
+.addBrand-container.ink-setmeal-add-page {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(118, 102, 71, 0.05), rgba(118, 102, 71, 0) 28%),
+    linear-gradient(180deg, #fbf8f1 0%, #f4eee4 100%);
+}
+
+.dashboard-container .container,
+.addBrand-container .container {
+  background: #FFFDF8 !important;
+  border: 1px solid rgba(165,130,80,0.16);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(70,50,20,0.04);
+}
+
+.dashboard-container .tableBar {
+  background: linear-gradient(180deg, #fffdf8 0%, #faf4e9 100%);
+  border: 1px solid #e8dece;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.dashboard-container .homeTitle,
+.addBrand-container .homeTitle {
+  font-weight: 700;
+  color: #1f2933;
+}
+
+.el-table th {
+  background: #f8f2e7 !important;
+  color: #1f2933 !important;
+}
+.el-table td { background: #fffefb; }
+.el-table--enable-row-hover .el-table__body tr:hover > td { background: #fdf7ed !important; }
+
+.continue,
+.ink-query-btn,
+.ink-save-btn {
+  background: linear-gradient(90deg, #17324d 0%, #0f2238 100%) !important;
+  border-color: #17324d !important;
+  color: #fff !important;
+}
+
+.ink-create-btn,
+.ink-save-continue-btn,
+.ink-add-flavor-btn,
+.ink-add-dish-btn {
+  background: linear-gradient(90deg, #f2c14e 0%, #c99a2e 100%) !important;
+  border-color: #c99a2e !important;
+  color: #3d2d11 !important;
+}
+
+.dashboard-container .tableLab > span,
+.ink-op-delete,
+.delBut {
+  color: #c46a61 !important;
+}
+
+.ink-cancel-btn,
+.el-button--default {
+  background: #fffdf8;
+  border: 1px solid #d8ccb8;
+  color: #586578;
+}
+
+/* Ensure critical action buttons always visible in normal flow */
+.tableBar .el-button,
+.tableBar .tableLab span,
+.subBox .el-button,
+.addBut,
+.blueBug,
+.delBut {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* login page */
+.login {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(196, 158, 89, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(44, 59, 52, 0.08), transparent 30%),
+    radial-gradient(circle at 12% 86%, rgba(85, 82, 70, 0.10), transparent 34%),
+    linear-gradient(135deg, #fbf7ef 0%, #f4ead8 45%, #efe1c9 100%) !important;
+}
+.login .login-box,
+.login .login-form {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(21, 36, 54, 0.15);
+}
+.login .login-form {
+  background: #fffdf8 !important;
+}
