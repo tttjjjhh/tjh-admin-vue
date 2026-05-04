@@ -82,9 +82,9 @@ export default class extends Vue {
     height: 40px;
     text-align: center;
     line-height: 40px;
-    color: #333;
-    border: 1px solid #e5e4e4;
-    background-color: white;
+    color: #5F4A32;
+    border: 1px solid #E4D6BF;
+    background-color: #fffdf8;
     border-left: none;
     cursor: pointer;
     .special-item {
@@ -109,11 +109,13 @@ export default class extends Vue {
     }
   }
   .active {
-    background-color: #ffc200;
+    background-color: #F3E2BE;
+    border-color: #D6B16A;
+    color: #6B4518;
     font-weight: bold;
   }
   .tab-item:first-child {
-    border-left: 1px solid #e5e4e4;
+    border-left: 1px solid #E4D6BF;
   }
 }
 </style>

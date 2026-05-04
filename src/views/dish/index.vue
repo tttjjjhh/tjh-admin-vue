@@ -1,7 +1,7 @@
 <template>
-  <div class="dashboard-container">
-    <div class="container">
-      <div class="tableBar">
+  <div class="dashboard-container dish-ink-page">
+    <div class="container dish-ink-container">
+      <div class="tableBar dish-filter-card">
         <label style="margin-right: 10px">菜品名称：</label>
         <el-input v-model="input"
                   placeholder="请填写菜品名称"
@@ -33,13 +33,13 @@
                      :label="item.label"
                      :value="item.value" />
         </el-select>
-        <el-button class="normal-btn continue"
+        <el-button class="normal-btn continue ink-query-btn"
                    @click="init(true)">
           查询
         </el-button>
 
         <div class="tableLab">
-          <span class="delBut non"
+          <span class="delBut non ink-batch-delete"
                 @click="deleteHandle('批量', null)">批量删除</span>
           <!-- <span class="blueBug non" @click="statusHandle('1')">批量启售</span>
           <span
@@ -49,6 +49,7 @@
             >批量停售</span
           > -->
           <el-button type="primary"
+                     class="ink-create-btn"
                      style="margin-left: 15px"
                      @click="addDishtype('add')">
             + 新建菜品
@@ -58,7 +59,7 @@
       <el-table v-if="tableData.length"
                 :data="tableData"
                 stripe
-                class="tableBox"
+                class="tableBox ink-dish-table"
                 @selection-change="handleSelectionChange">
         <el-table-column type="selection"
                          width="25" />
@@ -100,19 +101,19 @@
           <template slot-scope="scope">
             <el-button type="text"
                        size="small"
-                       class="blueBug"
+                       class="blueBug ink-op-edit"
                        @click="addDishtype(scope.row.id)">
               修改
             </el-button>
             <el-button type="text"
                        size="small"
-                       class="delBut"
+                       class="delBut ink-op-delete"
                        @click="deleteHandle('单删', scope.row.id)">
               删除
             </el-button>
             <el-button type="text"
                        size="small"
-                       class="non"
+                       class="non ink-op-status"
                        :class="{
                          blueBug: scope.row.status == '0',
                          delBut: scope.row.status != '0'
@@ -331,25 +332,52 @@ export default class extends Vue {
 .el-table-column--selection .cell {
   padding-left: 10px;
 }
+
+.dish-ink-page {
+  .ink-dish-table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .ink-dish-table::before {
+    background-color: #e8ddcc;
+  }
+
+  .ink-dish-table th {
+    background: #f7f1e6 !important;
+    color: #1f2933;
+  }
+
+  .ink-dish-table td {
+    background: #fffdf9;
+  }
+}
 </style>
 <style lang="scss" scoped>
 .dashboard {
   &-container {
     margin: 30px;
     .container {
-      background: #fff;
+      background: #fffdf8;
       position: relative;
       z-index: 1;
       padding: 30px 28px;
-      border-radius: 4px;
+      border-radius: 14px;
+      border: 1px solid #e4d8c7;
+      box-shadow: 0 8px 24px rgba(23, 38, 59, 0.06);
       //查询黑色按钮样式
       .normal-btn {
-        background: #333333;
+        background: #233646;
         color: white;
         margin-left: 20px;
+        border-color: #233646;
       }
       .tableBar {
         margin-bottom: 20px;
+        padding: 16px 18px;
+        border: 1px solid #e9dfd1;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #fffcf6 0%, #faf5eb 100%);
 
         .tableLab {
           display: inline-block;
@@ -359,18 +387,49 @@ export default class extends Vue {
             display: inline-block;
             font-size: 14px;
             padding: 0 20px;
-            color: $gray-2;
+            color: #cc6c62;
           }
         }
       }
       .tableBox {
         width: 100%;
-        border: 1px solid $gray-5;
+        border: 1px solid #e8ddcc;
         border-bottom: 0;
+        background: #fffdf9;
       }
       .pageList {
         text-align: center;
         margin-top: 30px;
+      }
+
+      .ink-create-btn {
+        background: #B9852F;
+        border-color: #B9852F;
+        color: #fff;
+        box-shadow: 0 3px 8px rgba(185, 133, 47, 0.22);
+      }
+
+      .ink-create-btn:hover,
+      .ink-create-btn:focus {
+        background: #A87424;
+        border-color: #A87424;
+      }
+
+      .ink-create-btn:active {
+        background: #8F5F1B;
+        border-color: #8F5F1B;
+      }
+
+      .ink-op-edit {
+        color: #2f5d50 !important;
+      }
+
+      .ink-op-delete {
+        color: #c46a61 !important;
+      }
+
+      .ink-op-status {
+        color: #425466 !important;
       }
     }
   }

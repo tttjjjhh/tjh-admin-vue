@@ -112,10 +112,13 @@ service.interceptors.response.use(
       }
     }
     //请求响应中的config的url会带上代理的api需要去掉
-    error.config.url = error.config.url.replace('/api', '')
-    // 请求完成，删除请求中状态
-    const key = getRequestKey(error.config);
-    removePending(key);
+    // 某些异常（如取消请求）可能不存在 error.config，需做空值保护
+    if (error && error.config && error.config.url) {
+      error.config.url = error.config.url.replace('/api', '')
+      // 请求完成，删除请求中状态
+      const key = getRequestKey(error.config);
+      removePending(key);
+    }
     // console.log(error, pending, 'error11')
     // Message({
     //   'message': error.message,

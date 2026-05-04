@@ -108,6 +108,7 @@
     </div>
     <el-dialog :title="classData.title"
                :visible.sync="classData.dialogVisible"
+               :modal="false"
                width="30%"
                :before-close="handleClose">
       <el-form ref="classData"
