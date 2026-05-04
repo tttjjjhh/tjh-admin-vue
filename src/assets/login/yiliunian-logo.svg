@@ -1,18 +1,150 @@
-<svg width="920" height="220" viewBox="0 0 920 220" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#111"/>
-      <stop offset="1" stop-color="#444"/>
-    </linearGradient>
-  </defs>
-  <rect width="920" height="220" fill="#fff"/>
-  <circle cx="108" cy="110" r="84" fill="none" stroke="url(#ink)" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 3"/>
-  <text x="210" y="112" font-size="76" font-family="KaiTi, STKaiti, serif" fill="#111" font-weight="700">忆流年外卖</text>
-  <line x1="210" y1="150" x2="300" y2="150" stroke="#666" stroke-width="1"/>
-  <line x1="620" y1="150" x2="710" y2="150" stroke="#666" stroke-width="1"/>
-  <text x="315" y="158" font-size="26" letter-spacing="5" font-family="Times New Roman, serif" fill="#444">TIMELESS GASTRONOMY</text>
-  <rect x="150" y="70" rx="6" ry="6" width="24" height="48" fill="none" stroke="#C00" stroke-width="2"/>
-  <text x="155" y="87" font-size="12" font-family="KaiTi, serif" fill="#C00">忆</text>
-  <text x="155" y="101" font-size="12" font-family="KaiTi, serif" fill="#C00">流</text>
-  <text x="155" y="115" font-size="12" font-family="KaiTi, serif" fill="#C00">年</text>
+<svg width="2048" height="512" viewBox="0 0 2048 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="inkStroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a1a1a"/>
+            <stop offset="60%" stop-color="#3a3a3a"/>
+            <stop offset="100%" stop-color="#111111"/>
+        </linearGradient>
+
+        <linearGradient id="mountainGray" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8f8f8f"/>
+            <stop offset="100%" stop-color="#d8d8d8"/>
+        </linearGradient>
+
+        <filter id="mistBlur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="10"/>
+        </filter>
+
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#888" flood-opacity="0.16"/>
+        </filter>
+
+        <clipPath id="sceneClip">
+            <circle cx="232" cy="232" r="175"/>
+        </clipPath>
+    </defs>
+
+    <rect width="2048" height="512" fill="#ffffff"/>
+
+    <!-- 左侧水墨圆景 -->
+    <g transform="translate(70,20)">
+        <!-- 外墨圈 -->
+        <path d="
+      M292 53
+      C375 68, 433 128, 438 213
+      C443 310, 384 392, 294 420
+      C205 448, 112 419, 59 347
+      C11 281, 11 188, 56 120
+      C105 47, 198 30, 292 53
+    "
+              fill="none"
+              stroke="url(#inkStroke)"
+              stroke-width="12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-dasharray="4 2"
+              opacity="0.95"/>
+
+        <!-- 左侧浓墨 -->
+        <path d="
+      M58 126
+      C80 83, 115 57, 163 45
+      C138 61, 114 86, 95 122
+      C66 177, 61 252, 86 315
+      C104 361, 133 392, 173 413
+      C121 404, 82 379, 54 336
+      C8 267, 9 184, 58 126
+    "
+              fill="none"
+              stroke="#2a2a2a"
+              stroke-width="18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.85"/>
+
+        <!-- 圆景内容 -->
+        <g clip-path="url(#sceneClip)">
+            <rect x="57" y="57" width="350" height="350" fill="#ffffff"/>
+
+            <!-- 山 -->
+            <path d="M120 250 C155 180, 195 138, 230 126 C210 160, 215 200, 243 250 Z"
+                  fill="url(#mountainGray)" opacity="0.95"/>
+            <path d="M235 253 C274 182, 320 146, 355 140 C338 174, 342 206, 365 253 Z"
+                  fill="url(#mountainGray)" opacity="0.82"/>
+            <path d="M175 255 C205 218, 236 195, 270 190 C251 214, 252 238, 270 257 Z"
+                  fill="#cfcfcf" opacity="0.72"/>
+
+            <!-- 雾 -->
+            <ellipse cx="245" cy="246" rx="150" ry="42" fill="#f1f1f1" filter="url(#mistBlur)" opacity="0.95"/>
+            <ellipse cx="255" cy="282" rx="190" ry="50" fill="#f8f8f8" filter="url(#mistBlur)" opacity="0.9"/>
+
+            <!-- 水 -->
+            <rect x="70" y="286" width="330" height="95" fill="#fafafa"/>
+            <ellipse cx="230" cy="308" rx="180" ry="18" fill="#efefef" opacity="0.6"/>
+
+            <!-- 树 -->
+            <path d="M105 335 C112 280, 111 228, 104 165" stroke="#151515" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <path d="M98 215 C81 190, 66 173, 48 157" stroke="#1d1d1d" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M101 196 C85 166, 73 144, 59 120" stroke="#1d1d1d" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M109 184 C123 159, 132 139, 137 115" stroke="#1d1d1d" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M112 205 C132 184, 151 167, 172 154" stroke="#1d1d1d" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M109 237 C87 220, 69 208, 50 199" stroke="#1d1d1d" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+            <!-- 岸边 -->
+            <ellipse cx="130" cy="290" rx="34" ry="12" fill="#777777" opacity="0.45"/>
+            <ellipse cx="165" cy="300" rx="28" ry="10" fill="#999999" opacity="0.28"/>
+            <ellipse cx="92" cy="310" rx="45" ry="16" fill="#b7b7b7" opacity="0.25"/>
+
+            <!-- 小舟 -->
+            <path d="M180 325 C210 318, 262 318, 300 325 C284 338, 196 340, 180 325 Z"
+                  fill="#222222" opacity="0.92"/>
+            <rect x="238" y="305" width="6" height="22" fill="#1c1c1c"/>
+            <path d="M241 304 C235 309, 228 318, 224 328" stroke="#1c1c1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M216 304 C220 291, 227 284, 236 280" stroke="#202020" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M245 318 C258 312, 280 312, 288 318 L288 327 C277 330, 255 330, 245 327 Z"
+                  fill="#555555" opacity="0.65"/>
+
+            <!-- 倒影 -->
+            <path d="M185 341 C214 347, 264 347, 295 341" stroke="#bcbcbc" stroke-width="3" fill="none" opacity="0.55"/>
+            <path d="M238 327 L238 348" stroke="#c8c8c8" stroke-width="3" opacity="0.5"/>
+            <ellipse cx="241" cy="351" rx="35" ry="6" fill="#d9d9d9" opacity="0.45"/>
+
+            <!-- 飞鸟 -->
+            <path d="M282 170 C288 165, 294 165, 300 170" stroke="#666666" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M302 170 C308 165, 314 165, 320 170" stroke="#666666" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- 印章 -->
+        <g transform="translate(330,110)">
+            <rect x="0" y="0" width="38" height="86" rx="8" ry="8" fill="none" stroke="#c41717" stroke-width="4"/>
+            <text x="19" y="24" text-anchor="middle" font-size="20" font-family="KaiTi, STKaiti, serif" fill="#c41717">忆</text>
+            <text x="19" y="47" text-anchor="middle" font-size="20" font-family="KaiTi, STKaiti, serif" fill="#c41717">流</text>
+            <text x="19" y="70" text-anchor="middle" font-size="20" font-family="KaiTi, STKaiti, serif" fill="#c41717">年</text>
+        </g>
+    </g>
+
+    <!-- 右侧文字 -->
+    <g transform="translate(760,70)">
+        <text x="0" y="195"
+              font-size="150"
+              font-family="STKaiti, KaiTi, serif"
+              font-weight="700"
+              fill="#101010"
+              letter-spacing="6"
+              filter="url(#softShadow)">
+            忆流年外卖
+        </text>
+
+        <line x1="20" y1="270" x2="110" y2="270" stroke="#6f6f6f" stroke-width="2"/>
+        <line x1="790" y1="270" x2="880" y2="270" stroke="#6f6f6f" stroke-width="2"/>
+
+        <text x="450" y="287"
+              text-anchor="middle"
+              font-size="52"
+              letter-spacing="6"
+              font-family="Times New Roman, Georgia, serif"
+              fill="#4e4e4e">
+            TIMELESS GASTRONOMY
+        </text>
+    </g>
 </svg>
